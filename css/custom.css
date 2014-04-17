@@ -1,0 +1,442 @@
+/* HEX COLORS: 
+Orange - #e65619 
+Blue - #1868ae
+Dark Gray Text - #343a49
+*/
+
+/** Font Size variation based on browser window size **/
+@media all and (max-width: 1200px) { /* screen size until 1200px */
+	body {font-size: 14px;}
+}
+@media all and (max-width: 1000px) { /* screen size until 1000px */
+	body {font-size: 11px;}
+}
+@media all and (max-width: 500px) { /* screen size until 500px */
+	body {font-size: 10px;}
+}
+.debug {border: solid 2px black;} /** just for debugging **/
+/** **/
+body { 
+	font-family: Helvetica,Arial,sans-serif; 
+}
+/** Bootstrap BUTTONS modified **/
+.btn-default {
+	background-color: transparent;
+	border-radius: 3px;
+	border-color: #FFF;
+	color: #FFF;
+	font-size: 1.4em;
+}
+.btn-default:hover {
+	background-color:#FFF;
+	color:#e65619;
+	border-color:#FFF;
+}
+.btn-primary {
+	border-radius:3px;
+	background-color:#1868ae;
+	font-size: 1.5em;
+}
+.home-iptv-wrapper .btn, #home-mobile-plans .btn {
+	font-size: 1.6em;
+	text-transform: none;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+	color: #FFF;
+}
+/** end BUTTONS **/
+
+.header {
+	background: #e65619;
+	box-shadow:1px 1px 5px #d7d7d7;
+	padding: 1.0em 4.46em 0em 4.4em;
+}
+
+/** Bootstrap NAVS modified **/
+.navbar-default .navbar-brand {
+	color: #FFF;
+}
+.navbar {
+	background-color: transparent;
+	background: transparent;
+	border: none;
+}
+.navbar-default .navbar-nav>li>a {
+	color: #FFF;
+	margin: 0 0.6em;
+}
+.nav-wrapper {
+	font-size: 1.4em;
+	font-weight: 300;
+}
+.nav-wrapper .btn-default {
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+.navbar-toggle {
+	background-color: #FFF;
+}
+#navs-for-mobile ul {
+	padding:0;
+	margin:0;
+}
+#navs-for-mobile {
+	padding:0;
+}
+.navbar-collapse {
+	border-top: 0;
+}
+
+
+/** CSS Specific to the HOME PAGE **/
+.banner-home {
+	background: url('../images/bg-home.jpg') no-repeat;
+	background-size: cover;
+}
+#home-banner-text-area {
+	width: 70%;
+	margin: auto;
+	padding: 5.8em;
+}
+#home-banner-text-area h1 {
+	font-size: 5.8em;
+	font-weight: 300;
+	color: #e65619;
+}
+#home-banner-text-area p {
+	font-size: 2.2em;
+	margin: 1.8em 0 ;
+}
+#home-banner-text-area-xs {
+	width: 90%;
+	margin: auto;
+	padding: 2.6em 6.8em;
+}
+#home-banner-text-area-xs h1 {
+	font-size: 2.8em;
+	font-weight: 300;
+	color: #e65619;
+}
+#home-banner-text-area-xs p {
+	font-size: 1.6em;
+	margin: 1.8em 0 ;
+}
+.steps-overview, .home-mobile-plans, .home-security-systems, .home-iptv {
+	width: 70%;
+	margin: auto;
+	font-size: 1.2em;
+}
+.steps-overview-col {
+	padding:2.4em;
+}
+
+/** PRODUCT PAGE CSS **/
+@media all and (min-width: 800px) { /* on smaller screen, it looks better to have 100% width */
+	.product-section-wrapper {
+		width: 80%;
+		margin: auto;
+	}
+}
+
+.product-rows {
+	padding: 2.2em 0;
+}
+.product-rows h1 {
+	font-size: 2.8em;
+}
+.product-rows p {
+	font-size: 1.4em;
+	font-weight: 300;
+}
+.product-img-left {
+	padding-right: 9.4em;
+}
+#product-row-2, #product-row-5 {
+	background-color: #e65619;
+	color: #FFF;
+}
+#product-row-3 {
+	background-color: #1868ae;
+	color: #FFF;
+}
+@media all and (max-width: 500px) { /* it looks better on smaller device if we have a line differentiator */
+	#product-row-1 {
+		border-top: 0.2px dashed #CCC;
+	}
+}
+.mobile-plans-wrapper, .home-iptv-wrapper {
+	color: #FFF;
+	padding: 2.4em 0em 0em 0em;
+}
+.mobile-plans-wrapper, .home-iptv-wrapper {
+	background-color: #e65619;
+}
+.home-iptv-wrapper {
+	background-color: #1868ae;
+	padding-bottom: 3.2em;
+}
+#phone-image, #iptv-image {
+	padding-right: 7.4em;
+}
+#mobile-plans-text-wrapper, #home-iptv-text-wrapper {
+	padding: 4.4em;
+}
+#mobile-plans-text-wrapper h1, .home-security-systems h1, .home-iptv h1 {
+	font-size: 3.4em;
+}
+#mobile-plans-text-wrapper p, #home-iptv-text-wrapper p {
+	font-size: 1.8em;
+	font-weight: 300;
+	padding: 1.0em 0em 1.0em 0em;
+}
+.home-security-systems {
+	padding: 1.6em;
+	margin-top:2.4em;
+}
+.home-security-systems h1 {
+	font-weight: 300;
+}
+.home-security-systems p {
+	font-size: 1.4em;
+	font-weight: 300;
+	padding-right: 2.4em;
+	padding-bottom: 1.4em;
+}
+.footer p {
+	padding: 1.4em 0em;
+	font-size: 0.8em;
+}
+
+/** FORM **/
+.modal-open{overflow:auto} /** Prevent page movement from Pop Up modal **/
+.modal-backdrop {background-color: #000;}
+.modal-header {
+	color: #FFF;
+	padding:9px 15px;
+	border-bottom:1px solid #eee;
+	background-color: #e65619;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.modal-body a {
+	font-size: 0.8em;
+	color: #600;
+}
+.billing-address, .shipping-address {
+	padding: 2.0em;
+	border: 1px #CCC solid;
+	margin: 0.1em;
+}
+.billing-address p, .shipping-address p {
+	padding: 0.4em 1.2em;
+	font-size: 1.0em;
+	text-transform: uppercase;
+}
+.shipping-address span {
+	font-size: 0.6em;
+}
+
+.order-info-wrapper {
+	width: 440px;
+	margin:auto;
+	padding: 2.2em;
+}
+
+/** ABOUT CSS **/
+.banner-about-lg {
+	background: url('../images/bg-about.jpg') no-repeat;
+	background-position: right center;
+	width: 85%;
+	margin: auto;
+}
+.banner-about-sm {
+	background-position: right center;
+	width: 90%;
+	margin: auto;
+}
+.banner-about-lg h1  {
+	font-size: 3.8em;
+	font-weight: 300;
+	margin: 7.2em 0 2.2em 2.2em;
+}
+.banner-about-sm h1 {
+	font-size: 3.8em;
+	font-weight: 300;
+}
+
+/** OPPORTUNITY CSS **/
+.banner-opportunity-lg {
+	background: url('../images/bg-opportunity.jpg') no-repeat;
+	background-position: right center;
+}
+.banner-opportunity-sm {
+	background-position: right center;
+}
+.banner-opportunity-lg h1  {
+	font-size: 3.8em;
+	font-weight: 300;
+	margin: 5.2em 0 2.2em 2.2em;
+}
+.banner-opportunity-sm h1 {
+	font-size: 3.8em;
+	font-weight: 300;
+	padding: 1.2em;
+}
+
+/** SHOPPING AREA **/
+.shopping-area-lg {
+	width: 70%;
+	margin: auto;
+	padding: 2.4em;
+}
+
+/** PACKAGES **/
+.packages-wrapper {
+	width: 80%;
+	margin: auto;
+	padding: 2.4em 1.2em;
+}
+
+
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	background: transparent;
+	color: #FFF;
+}
+.dropdown-menu {
+	background-color: #e65619;
+	padding: 1.1em;
+	min-width: 0;
+	left:1.6em;
+	border: none;
+	color: #FFF;
+	border: 1px solid white;
+}
+.dropdown-menu li a {
+	padding: 0.4em;
+	color: #FFF;
+	font-weight: bold;
+}
+.dropdown-menu li a:hover {
+	background: transparent;
+}
+
+a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
+
+.opportunity-123, .opportunity-row-2, .opportunity-row-3 {
+	width: 80%;
+	margin: 0 auto 1.4em auto;
+}
+.opportunity-row-2, .opportunity-row-3 p {
+	padding: 2.4em;
+}
+.opportunity-123-col {
+	text-align: center;
+}
+.opportunity-123-col h1{
+	font-size: 10.0em;
+	font-weight: bold;
+}
+.opportunity-123-col p {
+	padding: 0 2.4em;
+	margin: 0;
+}
+.CSSTableGenerator {
+	margin:0px;padding:0px;
+	width:100%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+	
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}.CSSTableGenerator table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.CSSTableGenerator tr:last-child td:last-child {
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.CSSTableGenerator table tr:first-child td:first-child {
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.CSSTableGenerator table tr:first-child td:last-child {
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+}.CSSTableGenerator tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}.CSSTableGenerator tr:hover td{
+	
+}
+.CSSTableGenerator tr:nth-child(odd){ background-color:#ffaa56; }
+.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
+	vertical-align:middle;
+	
+	
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:7px;
+	font-size:10px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+}.CSSTableGenerator tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.CSSTableGenerator tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.CSSTableGenerator tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.CSSTableGenerator tr:first-child td{
+		background:-o-linear-gradient(bottom, #ff7f00 5%, #bf5f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff7f00), color-stop(1, #bf5f00) );
+	background:-moz-linear-gradient( center top, #ff7f00 5%, #bf5f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7f00", endColorstr="#bf5f00");	background: -o-linear-gradient(top,#ff7f00,bf5f00);
+
+	background-color:#ff7f00;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+.CSSTableGenerator tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #ff7f00 5%, #bf5f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff7f00), color-stop(1, #bf5f00) );
+	background:-moz-linear-gradient( center top, #ff7f00 5%, #bf5f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7f00", endColorstr="#bf5f00");	background: -o-linear-gradient(top,#ff7f00,bf5f00);
+
+	background-color:#ff7f00;
+}
+.CSSTableGenerator tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.CSSTableGenerator tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
