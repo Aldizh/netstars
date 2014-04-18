@@ -47,6 +47,7 @@
 				<div class="box">
 					<h2><span class="glyphicon glyphicon-credit-card"></span> Credit Wallet</h2>
 					<h3> <? echo $credit; ?></h3>
+					<p>credits</p>
 				</div>
 			</section>
 			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
@@ -61,21 +62,21 @@
 			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
 					<h2><span class="glyphicon glyphicon-circle-arrow-left"></span> Left</h2>
-					<h3><? echo $leftpoints; ?></p>
+					<h3><? echo $leftpoints; ?></h3>
 					<p>points</p>
 				</div>
 			</section>
 			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
 					<h2>Right <span class="glyphicon glyphicon-circle-arrow-right"></span></h2>
-					<h3> <? echo $rightpoints; ?></p>
+					<h3> <? echo $rightpoints; ?></h3>
 					<p>points</p>
 				</div>
 			</section>
 			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
 					<h2><span class="glyphicon glyphicon-hand-up"></span> Clicks Today</h2>
-					<h3><? echo $clicks . " days left."?></h3>
+					<h3><? echo $clicks; ?></h3>
 					<p>clicks so far</p>
 				</div>
 			</section>
@@ -83,15 +84,15 @@
 		<div class="row">
 			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2><span class="glyphicon glyphicon-circle-arrow-time"></span> Monthly Payment</h2>
-					<h3><? echo $days_to_end_of_month; ?></p>
+					<h2><span class="glyphicon glyphicon-time"></span> Monthly Payment</h2>
+					<h3><? echo $days_to_end_of_month; ?></h3>
 					<p>days left</p>
 				</div>
 			</section>
 			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2><span class="glyphicon glyphicon-circle-arrow-time"></span> Annual Payment</h2>
-					<h3><? echo $days_to_end_of_year; ?></p>
+					<h2><span class="glyphicon glyphicon-time"></span> Annual Payment</h2>
+					<h3><? echo $days_to_end_of_year; ?></h3>
 					<p>days left</p>
 				</div>
 			</section>
@@ -100,4 +101,4 @@
 </div>
 			
 			
-<?php include('includes/footer.php'); ?>
+<?php include('../includes-in/footer.php'); ?>
