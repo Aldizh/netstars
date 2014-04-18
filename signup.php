@@ -8,27 +8,35 @@
   		  </div>
   		  <div class="form-group">
 		      <section class="row">
-				  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					  <div class="radio">
 					    <label>
-					      <input type="radio" name="optionsRadios" id="partner" value="partner" checked>
-					      Partner
+					      <input type="radio" name="optionsRadios" id="partner" value="direct" checked>
+					      <label>Direct Sales</label>
 					    </label>
 					  </div>
 				  </div>
-				  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+					  <div class="radio">
+					    <label>
+					      <input type="radio" name="optionsRadios" id="partner" value="partner">
+					      <label>Partner</label>
+					    </label>
+					  </div>
+				  </div>
+				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
  					 <div class="radio">
  					   <label>
  					     <input type="radio" name="optionsRadios" id="personal" value="personal">
- 					     Personal
+					      <label>Personal</label>
  					   </label>
  					 </div>
 				  </div>
-				  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					  <div class="radio">
 					    <label>
 					      <input type="radio" name="optionsRadios" id="business" value="business">
-					      Business
+					      <label>Business</label>
 					    </label>
 					  </div>
 				  </div>

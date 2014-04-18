@@ -3,6 +3,7 @@ Orange - #e65619
 Blue - #1868ae
 Dark Gray Text - #343a49
 */
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
 /** Font Size variation based on browser window size **/
 @media all and (max-width: 1200px) { /* screen size until 1200px */
@@ -63,7 +64,7 @@ body {
 }
 .navbar-default .navbar-nav>li>a {
 	color: #FFF;
-	margin: 0 0.6em;
+	margin: 0 0.3em;
 }
 .nav-wrapper {
 	font-size: 1.4em;
@@ -132,12 +133,14 @@ body {
 
 /** PRODUCT PAGE CSS **/
 @media all and (min-width: 800px) { /* on smaller screen, it looks better to have 100% width */
-	.product-section-wrapper {
+	.product-section-wrapper, .word-from-ceo {
 		width: 80%;
 		margin: auto;
 	}
 }
-
+#product-row-3 {
+	padding-bottom:0;
+}
 .product-rows {
 	padding: 2.2em 0;
 }
@@ -175,10 +178,13 @@ body {
 	text-align: center;
 }
 .form-box {
-	width: 32.2em;
+	width: 36.2em;
 	float: none;
 	margin: auto;
 	padding: 2.8em;
+}
+.form-box label {
+	float: left;
 }
 .radio {
 	margin:0;
@@ -279,7 +285,9 @@ body {
 	margin: auto;
 	padding: 2.4em 1.2em;
 }
-
+.packages-wrapper section {
+	padding-bottom: 2.4em;
+}
 
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
@@ -328,4 +336,44 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 .login-signup-mobile {
 	background:#e65619;
 	padding: 1.6em;
+}
+
+.packages-wrapper a {
+	margin-top: 1.2em;
+}
+
+.word-from-ceo {
+	margin-bottom: 4.2em;
+}
+
+
+/** PORTAL CSS **/
+.portal-container {
+	margin-top: 1.2em;
+}
+.home-boxes {
+	padding:  0 1.4em 1.4em 1.4em;
+	font-weight: bold;
+}
+.glyphicon-usd {
+	color: #CCC;
+	font-size: 0.8em;
+}
+.home-boxes h2 {
+	font-size: 1.6em;
+	background: #343a49;
+	color: #FFF;
+	margin:0;
+	text-align:center;
+	padding: 0.2em;
+}
+.home-boxes p {
+	font-size: 0.8em;
+	padding: 1.2em;
+	
+}
+.box {
+	border: 1px solid #CCC;
+	padding:0;
+	margin-bottom: 2.4em;
 }

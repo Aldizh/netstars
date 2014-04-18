@@ -1,6 +1,5 @@
 	<!-- MODAL - Purchase Form -->
 	<?php include('includes/contact-us.php'); ?>
-	<?php include('includes/login-modal.php'); ?>
 	<?php include('includes/privacy-policy.php'); ?>
 	<?php include('includes/terms.php'); ?>
 	<?php include('includes/refund-policy.php'); ?>
@@ -10,7 +9,7 @@
 	</div>
 	<!-- javascript -->
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 
 	</body>
 </html>
