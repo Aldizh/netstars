@@ -76,8 +76,8 @@
 			$sponsor_id = $currentNode;
 		}
 		//check and set the sponsor
-		$sql_read = "INSERT INTO `ciaot1_netex`.`customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `level`, `sponsor_ID`, `position`, `membership_type`, `weekly_qualification`, `monthly_qualification`, `tree_qualification`, `global_cap`, `binary_cap`, `monthly_expiration`, `yearly_expiration`, `cashbalance`, `creditbalance`, `pointsbalance`, `leftpoints`, `rightpoints`, `numberofclicks`)
-													VALUES (NULL, '$username', '$password', NULL, '$firstname', '$lastname', '$email', '1', '$sponsor_id', 'right', '$membership', '0', '0', '0', '$bonus_cap', '0', '$month_date', '$year_date', '0', '0', '0', NULL, NULL, NULL);";
+		$sql_read = "INSERT INTO `ciaot1_netex`.`customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `level`, `sponsor_ID`, `position`, `membership_type`, `weekly_qualification`, `monthly_qualification`, `tree_qualification`, `global_cap`, `binary_cap`, `monthly_expiration`, `yearly_expiration`, `cashbalance`, `creditbalance`, `pointsbalance`, `leftpoints`, `rightpoints`, `numberofclicks`, `status`)
+													VALUES (NULL, '$username', '$password', NULL, '$firstname', '$lastname', '$email', '1', '$sponsor_id', 'right', '$membership', '0', '0', '0', '$bonus_cap', '0', '$month_date', '$year_date', '0', '0', '0', NULL, NULL, NULL, 'pending');";
 		$result = mysql_query($sql_read);
 		//if (mysql_error() == "Duplicate entry 'aldizh' for key 'username'"){echo "Username Hhs to be unique";}
 		if ($result == false){die(var_dump(mysql_error()));}
@@ -104,7 +104,7 @@
 		$result_update = mysql_query($sql_update);
 		if ($result_update == false){die(var_dump(mysql_error()));}
 		if(!$err_email and !$err_passlength){
-			header("Location: payment.php"); 
+			header("Location: thanks.php"); 
 		}
 	}
 ?>
@@ -113,7 +113,7 @@
 		<h4> SIGN UP FORM </h4>
 		<form role="form" method="post" name="signup" id="signup" action="<? $_SERVER['PHP_SELF'] ?>">
   		  <div class="form-group">
-  		    <input type="text" name="referral" class="form-control" id="ref-code" placeholder="Referal Code (if any)">
+  		    <input type="text" name="referral" class="form-control" id="ref-code" placeholder="Referal Code*" required>
   		  </div>
   		  <div class="form-group">
 		      <section class="row">
