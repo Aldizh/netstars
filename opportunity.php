@@ -22,12 +22,12 @@
 	<section class="col-lg-4 col-md-4 col-sm-4 col-sm-12 opportunity-123-col">
 		<h1>2</h1>
 		<p><strong>Share them with your Network</strong></p>
-		<p>If you love the NetXFree product line, we’re sure your friends and family will, too.</p>
+		<p>If you love the NexXStars product line, we’re sure your friends and family will, too.</p>
 	</section>
 	<section class="col-lg-4 col-md-4 col-sm-4 col-sm-12 opportunity-123-col">
 		<h1>3</h1>
 		<p><strong>Reap Real Rewards</strong></p>
-		<p>NetXFree offers real incentives for you to reach your goals. That’s in addition to your income flow.</p>
+		<p>NexXStars offers real incentives for you to reach your goals. That’s in addition to your income flow.</p>
 	</section>
 </div>
 <div class="row opportunity-row-2">
