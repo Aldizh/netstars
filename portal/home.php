@@ -36,54 +36,63 @@
 	</section>
 	<section class="col-lg-9 col-md-9 home-boxes">
 		<div class="row">
-			<section class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2><span class="glyphicon glyphicon-usd"></span> Coin Wallet</h2>
-					<p>So far you have accumulated $<? echo $cash?></p>
+					<h2><span class="glyphicon glyphicon-asterisk"></span> Coin Wallet</h2>
+					<h3> $<? echo $cash; ?></h3>
+					<p>coins</p>
 				</div>
 			</section>
-			<section class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2><span class="glyphicon glyphicon-usd"></span> Credit Wallet</h2>
-					<p>So far you have accumulated <? echo $credit . " Credits."; ?></p>
+					<h2><span class="glyphicon glyphicon-credit-card"></span> Credit Wallet</h2>
+					<h3> <? echo $credit; ?></h3>
 				</div>
 			</section>
-			<section class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2><span class="glyphicon glyphicon-usd"></span> Point Wallet</h2>
-					<p>So far you have accumulated <? echo $points . " Points."; ?></p>
-				</div>
-			</section>
-			<section class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-				<div class="box">
-					<h2><span class="glyphicon glyphicon-hand-up"></span> Clicks Today</h2>
-					<p>Today you have made <? echo $clicks . " Clicks."; ?></p>
+					<h2><span class="glyphicon glyphicon-star"></span> Points Wallet</h2>
+					<h3> <? echo $points; ?></h3>
+					<p>points</p>
 				</div>
 			</section>
 		</div>
 		<div class="row">
-			<section class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2><span class="glyphicon glyphicon-circle-arrow-left"></span> Left Points</h2>
-					<p>You have accumulated <? echo $leftpoints . " Left points.(Used for your binary qualification)"; ?></p>
+					<h2><span class="glyphicon glyphicon-circle-arrow-left"></span> Left</h2>
+					<h3><? echo $leftpoints; ?></p>
+					<p>points</p>
 				</div>
 			</section>
-			<section class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2>Right Points <span class="glyphicon glyphicon-circle-arrow-right"></span></h2>
-					<p>You have accumulated <? echo $rightpoints . " Right points.(Used for your binary qualification)"; ?></p>
+					<h2>Right <span class="glyphicon glyphicon-circle-arrow-right"></span></h2>
+					<h3> <? echo $rightpoints; ?></p>
+					<p>points</p>
 				</div>
 			</section>
-			<section class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2><span class="glyphicon glyphicon-calendar"></span> Monthly Membership</h2>
-					<p>You have <? echo $days_to_end_of_month . " days left."?></p>
+					<h2><span class="glyphicon glyphicon-hand-up"></span> Clicks Today</h2>
+					<h3><? echo $clicks . " days left."?></h3>
+					<p>clicks so far</p>
 				</div>
 			</section>
-			<section class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		</div>
+		<div class="row">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
-					<h2><span class="glyphicon glyphicon-calendar"></span> Yearly Membership</h2>
-					<p>You have <? echo $days_to_end_of_year . " days left."?>.</p>
+					<h2><span class="glyphicon glyphicon-circle-arrow-time"></span> Monthly Payment</h2>
+					<h3><? echo $days_to_end_of_month; ?></p>
+					<p>days left</p>
+				</div>
+			</section>
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+				<div class="box">
+					<h2><span class="glyphicon glyphicon-circle-arrow-time"></span> Annual Payment</h2>
+					<h3><? echo $days_to_end_of_year; ?></p>
+					<p>days left</p>
 				</div>
 			</section>
 		</div>
