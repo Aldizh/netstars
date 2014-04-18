@@ -8,8 +8,6 @@
 	<link href="css/custom.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Averia Serif Libre">
 	<script src="js/respond.min.js"></script>
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
 </head>
 
 <body>

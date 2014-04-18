@@ -14,7 +14,7 @@
 	<div class="container-fluid">
 		<section class="row header">
 			<div class="col-lg-2 col-md-2 col-sm-6 hidden-xs text-center">
-				<a href="index.php"><img src="../images/logo.png" alt="Logo"></a>
+				<a href="../index.php"><img src="../images/logo.png" alt="Logo"></a>
 				<p style="color: #FFF; font-size: 0.8em; margin-left:4.2em;"><em>Technology Crowdsourced</em></p>
 			</div>
 			<div class="col-xs-6 text-center visible-xs">
@@ -27,10 +27,10 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li><a href="about.php">About</a></li>
-								<li><a href="membership.php">Membership</a></li>
-								<li><a href="products.php">Products</a></li>
-								<li><a href="opportunity.php">Opportunity</a></li>
+								<li><a href="../about.php">About</a></li>
+								<li><a href="../membership.php">Membership</a></li>
+								<li><a href="../products.php">Products</a></li>
+								<li><a href="../opportunity.php">Opportunity</a></li>
 								<li><a href="#" data-toggle="modal" data-target=".contact-us">Contact Us</a></li>
 								<li><a class="btn btn-default btn-md" href="#">LOGOUT</a></li>
 								<li class="dropdown" style="font-size: 90%; font-weight: bold;">
@@ -38,8 +38,8 @@
 								      EN <span class="caret"></span>
 								    </a>
 								    <ul class="dropdown-menu">
-								      <li><a href="es/index.php">ES</a></li>
-								      <li><a href="pt/index.php">PT</a></li>
+								      <li><a href="../es/index.php">ES</a></li>
+								      <li><a href="../pt/index.php">PT</a></li>
 								    </ul>
 								  </li>
 							</ul>

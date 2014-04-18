@@ -10,7 +10,7 @@
 				    <strong>NexXStars</strong><br>
 				    1712 Pioneer Ave<br>
 				    Cheyenne, WY 82001<br><br>
-				    Phone: (855) 772-8189<br>
+				    Phone: (855) 262-8292<br>
 					Email: info@nexxstars.com
 				  </address>
 				

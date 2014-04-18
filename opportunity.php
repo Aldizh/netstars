@@ -15,17 +15,17 @@
 </div>
 <div class="row opportunity-123">
 	<section class="col-lg-4 col-md-4 col-sm-4 col-sm-12 opportunity-123-col">
-		<h1>1</h1>
+		<img src="images/opportunity-icon1.png" alt="Opportunity Icon1">
 		<p><strong>Fall in Love with the Products</strong></p>
 		<p>It’s easy to share something you love. The only difference is, this time you get something in return.</p>
 	</section>
 	<section class="col-lg-4 col-md-4 col-sm-4 col-sm-12 opportunity-123-col">
-		<h1>2</h1>
+		<img src="images/opportunity-icon2.png" alt="Opportunity Icon2">
 		<p><strong>Share them with your Network</strong></p>
 		<p>If you love the NexXStars product line, we’re sure your friends and family will, too.</p>
 	</section>
 	<section class="col-lg-4 col-md-4 col-sm-4 col-sm-12 opportunity-123-col">
-		<h1>3</h1>
+		<img src="images/opportunity-icon3.png" alt="Opportunity Icon3">
 		<p><strong>Reap Real Rewards</strong></p>
 		<p>NexXStars offers real incentives for you to reach your goals. That’s in addition to your income flow.</p>
 	</section>

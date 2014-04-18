@@ -316,7 +316,7 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 
 .opportunity-123, .opportunity-row-2, .opportunity-row-3 {
 	width: 80%;
-	margin: 0 auto 1.4em auto;
+	margin: 2.4em auto 1.4em auto;
 }
 .opportunity-row-2, .opportunity-row-3 p {
 	padding: 2.4em;
@@ -338,19 +338,6 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 	padding: 1.6em;
 }
 
-.error {
-	font-weight: normal;
-	font-size:14px;
-	display:inline;
-	color: #cf1925;
-}
-
-.errorMessage {
-  border: 1px solid #800;
-  background-color: #f22;
-  color: #fff;
-}
-
 .packages-wrapper a {
 	margin-top: 1.2em;
 }
@@ -363,6 +350,7 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 /** PORTAL CSS **/
 .portal-container {
 	margin-top: 1.2em;
+	padding-right:1.4em;
 }
 .home-boxes {
 	padding:  0 1.4em 1.4em 1.4em;
@@ -389,4 +377,12 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 	border: 1px solid #CCC;
 	padding:0;
 	margin-bottom: 2.4em;
+}
+.my-network-wrapper {
+	border: 1px solid #CCC;
+	border-radius: 2px;
+}
+.tree-table {
+	width: 10.4em;
+	margin:1.6em auto;
 }

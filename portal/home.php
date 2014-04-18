@@ -1,11 +1,8 @@
-<?php include("includes/header.php"); ?>
+<?php include("../includes-in/header.php"); ?>
 
 <div class="row portal-container">
 	<section class="col-lg-3 col-md-3 member-nav">
-		<ul class="nav nav-pills nav-stacked">
-		  <li class="active"><a href="#"><span class="glyphicon glyphicon-home"> Home</a></li>
-		  <li><a href="#"><span class="glyphicon glyphicon-globe"> My Network</a></li>
-		</ul>
+		<?php include("../includes-in/portal-nav.php");?>
 	</section>
 	<section class="col-lg-9 col-md-9 home-boxes">
 		<div class="row">
@@ -64,4 +61,4 @@
 </div>
 			
 			
-<?php include('includes/footer.php'); ?>
+<?php include('../includes-in/footer.php'); ?>
