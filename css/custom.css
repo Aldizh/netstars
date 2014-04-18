@@ -329,3 +329,16 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 	background:#e65619;
 	padding: 1.6em;
 }
+
+.error {
+	font-weight: normal;
+	font-size:14px;
+	display:inline;
+	color: #cf1925;
+}
+
+.errorMessage {
+  border: 1px solid #800;
+  background-color: #f22;
+  color: #fff;
+}
