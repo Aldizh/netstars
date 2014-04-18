@@ -1,12 +1,12 @@
 	<!-- MODAL - Purchase Form -->
-	<?php include('includes/login-modal.php'); ?>
+	<?php include('includes/purchase-form.php'); ?>
 		<section class="row footer">
-			<p class="text-center">All contents © 2014 NexXStar. All rights reserved.</p>
+			<p class="text-center">© 2014 NexXstar. Todos los derechos reservados.</p>
 		</section>
 	</div>
 	<!-- javascript -->
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 
 	</body>
 </html>
