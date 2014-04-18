@@ -1,4 +1,33 @@
-<?php include("includes/header.php"); ?>
+<?php
+ ob_start();
+ session_start();
+ include("includes/header.php");
+ include("config.php");
+?>
+<?
+	$config = new Config();
+	$connection = $config->connect("209.200.231.164", "ciaot1", "mSaKSeZXt0TK");
+	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
+	if(!$dbconn){die("Could not select DB");}
+
+	//Take care of the logout
+	if ($_GET["logout"] == true){$_SESSION["id"] = NULL; header("Location: index.php");}
+
+	//Take care of login
+	if (isset($_POST["username"]) and isset($_POST["password"])){
+		$sql_read = "SELECT * FROM `customers` WHERE username like '$_POST[username]'";
+		$result = mysql_query($sql_read);
+		if ($result == false){die(var_dump(mysql_error()));}
+		$row = mysql_fetch_row($result);
+		if ($row[4] == $_POST["password"]){
+			$_SESSION["id"] = $row[0];
+			header("Location: portal/home.php"); 
+		} 
+		else{
+			echo "Invalid Password";
+		}
+	} 
+?>
 <section class="row banner-home">
 	<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
 		<section id="home-banner-text-area">

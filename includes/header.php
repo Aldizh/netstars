@@ -1,3 +1,4 @@
+<? session_start() ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -6,7 +7,10 @@
 	<title>NexXFree | Network of Tech Products for Entrepreneurs</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/custom.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Averia Serif Libre">
 	<script src="js/respond.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
 </head>
 
 <body>
@@ -26,13 +30,16 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
+								<li><a href="portal/home.php">Dashboard</a></li>
 								<li><a href="about.php">About</a></li>
 								<li><a href="membership.php">Membership</a></li>
 								<li><a href="products.php">Products</a></li>
 								<li><a href="opportunity.php">Opportunity</a></li>
 								<li><a href="#" data-toggle="modal" data-target=".contact-us">Contact Us</a></li>
 								<li><a class="btn btn-default btn-md" href="signup.php">JOIN NOW</a></li>
-								<li><a class="btn btn-default btn-lg" data-toggle="modal" data-target=".login-modal">LOGIN</a></li>
+								<? if ($_SESSION["id"] == NULL) {?>
+									<li><a class="btn btn-default btn-lg" data-toggle="modal" data-target=".login-modal">LOGIN</a></li>
+								<?}?>
 								<li class="dropdown" style="font-size: 90%; font-weight: bold;">
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								      EN <span class="caret"></span>
@@ -79,6 +86,9 @@
 								      <li><a href="pt/index.php">PT</a></li>
 								    </ul>
 								  </li>
+								<!-- 
+									<li><button class="btn btn-default btn-lg" data-toggle="modal" data-target=".purchase-form">Get Started</button></li>
+									-->
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
@@ -89,7 +99,9 @@
 			<div class="col-xs-6 text-right">
 				<a href="signup.php" class="btn btn-primary btn-sm">JOIN NOW</a>
 			</div>
-			<div class="col-xs-6">
-				<a class="btn btn-primary btn-sm" data-toggle="modal" data-target=".login-modal">LOGIN</a>
-			</div>
+			<? if ($_SESSION["id"] == NULL) {?>
+				<div class="col-xs-6">
+					<a class="btn btn-primary btn-sm" data-toggle="modal" data-target=".login-modal">LOGIN</a>
+				</div>
+			<?}?>
 		</section>
