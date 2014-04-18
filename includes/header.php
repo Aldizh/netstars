@@ -6,7 +6,6 @@
 	<title>NexXFree | Network of Tech Products for Entrepreneurs</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/custom.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Averia Serif Libre">
 	<script src="js/respond.min.js"></script>
 </head>
 
@@ -80,9 +79,6 @@
 								      <li><a href="pt/index.php">PT</a></li>
 								    </ul>
 								  </li>
-								<!-- 
-									<li><button class="btn btn-default btn-lg" data-toggle="modal" data-target=".purchase-form">Get Started</button></li>
-									-->
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
