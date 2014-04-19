@@ -18,10 +18,15 @@
   		$_GET  = sanitize($_GET);
   		$username = $_POST["username"];
   		$password = $_POST["password"];
+  		$password_conf = $_POST["password_conf"];
+  		if ($password != $password_conf){
+  			$err_confirmation = "Sorry, Passwords Need to Match.";
+  		}
+  		$password = sha1($password);
 		$firstname = $_POST["firstname"];
 		$lastname = $_POST["lastname"];
 		$email = $_POST["email"];
-		$phone = $_POST["phone"];
+		$phone = preg_replace("/[^0-9]/", "", $_POST["phone"]);
 		$membership = $_POST["optionsRadios"];
 		if ($membership === "personal"){
 			$bonus_cap = 2500;
@@ -76,35 +81,39 @@
 			$sponsor_id = $currentNode;
 		}
 		//check and set the sponsor
-		$sql_read = "INSERT INTO `ciaot1_netex`.`customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `level`, `sponsor_ID`, `position`, `membership_type`, `weekly_qualification`, `monthly_qualification`, `tree_qualification`, `global_cap`, `binary_cap`, `monthly_expiration`, `yearly_expiration`, `cashbalance`, `creditbalance`, `pointsbalance`, `leftpoints`, `rightpoints`, `numberofclicks`, `status`)
-													VALUES (NULL, '$username', '$password', NULL, '$firstname', '$lastname', '$email', '1', '$sponsor_id', 'right', '$membership', '0', '0', '0', '$bonus_cap', '0', '$month_date', '$year_date', '0', '0', '0', '0', '0', '0', 'pending');";
+		$sql_read = "INSERT INTO `ciaot1_netex`.`customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `level`, `sponsor_ID`, `position`, `membership_type`, `weekly_qualification`, `monthly_qualification`, `tree_qualification`, `global_cap`, `binary_cap`, `monthly_expiration`, `yearly_expiration`, `cashbalance`, `creditbalance`, `pointsbalance`, `leftpoints`, `rightpoints`, `numberofclicks`, `status`, `phone`)
+													VALUES (NULL, '$username', '$password', NULL, '$firstname', '$lastname', '$email', '1', '$sponsor_id', 'right', '$membership', '0', '0', '0', '$bonus_cap', '0', '$month_date', '$year_date', '0', '0', '0', '0', '0', '0', 'pending', '$phone');";
 		$result = mysql_query($sql_read);
-		if (mysql_error() == "Duplicate entry 'aldizh' for key 'username'"){$err_username = "Username has to be unique";}
+		if (substr(mysql_error(), 0, 9) === "Duplicate"){
+			$err_username = "Username and Email has to be unique";
+		}
 		else if ($result == false){die(var_dump(mysql_error()));}
-		$id = mysql_insert_id();
-		$_SESSION["id"] = $id;
-
-		if ($position == "left"){
-			$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `leftChild` = '$id' WHERE `customers`.`ID` = '$sponsor_id';";
-			$result_update = mysql_query($sql_update);
-			if ($result_update == false){die(var_dump(mysql_error()));}
-		}
 		else{
-			$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `rightChild` = '$id' WHERE `customers`.`ID` = '$sponsor_id';";
+			$id = mysql_insert_id();
+			$_SESSION["id"] = $id;
+
+			if ($position == "left"){
+				$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `leftChild` = '$id' WHERE `customers`.`ID` = '$sponsor_id';";
+				$result_update = mysql_query($sql_update);
+				if ($result_update == false){die(var_dump(mysql_error()));}
+			}
+			else{
+				$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `rightChild` = '$id' WHERE `customers`.`ID` = '$sponsor_id';";
+				$result_update = mysql_query($sql_update);
+				if ($result_update == false){die(var_dump(mysql_error()));}
+			}
+
+			$referralcode = $id . uniqid();
+			if( ($id % 2) == 0 )
+		    	$position = "left";
+			else
+				$position = "right";
+			$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `position` = '$position', `referralcode` = '$referralcode', `enroller_ID` = '$enroller_id' WHERE `customers`.`ID` = '$id';";
 			$result_update = mysql_query($sql_update);
 			if ($result_update == false){die(var_dump(mysql_error()));}
-		}
-
-		$referralcode = $id . uniqid();
-		if( ($id % 2) == 0 )
-	    	$position = "left";
-		else
-			$position = "right";
-		$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `position` = '$position', `referralcode` = '$referralcode', `enroller_ID` = '$enroller_id' WHERE `customers`.`ID` = '$id';";
-		$result_update = mysql_query($sql_update);
-		if ($result_update == false){die(var_dump(mysql_error()));}
-		if(!$err_email and !$err_passlength and !$err_username){
-			header("Location: thanks.php"); 
+			if(!$err_email and !$err_passlength and !$err_username and !$err_confirmation){
+				header("Location: thanks.php"); 
+			}
 		}
 	}
 ?>
@@ -113,18 +122,10 @@
 		<h4> SIGN UP FORM </h4>
 		<form role="form" method="post" name="signup" id="signup" action="<? $_SERVER['PHP_SELF'] ?>">
   		  <div class="form-group">
-  		    <input type="text" name="referral" class="form-control" id="ref-code" placeholder="Referal Code*" required>
+  		    <input type="text" name="referral" class="form-control" id="ref-code" placeholder="Referal Code*" value="<?=$_GET['code']?>" required>
   		  </div>
   		  <div class="form-group">
 		      <section class="row">
-				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					  <div class="radio">
-					    <label>
-					      <input type="radio" name="optionsRadios" id="partner" value="direct" checked>
-					      <label>Direct Sales</label>
-					    </label>
-					  </div>
-				  </div>
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					  <div class="radio">
 					    <label>
@@ -159,6 +160,11 @@
 		    <input type="password" class="form-control" name="password" placeholder="Password *" maxlength="30" required>
 		     <?php if (isset($err_passlength)) { echo $err_passlength; } ?>
 		  </div>
+		   <div class="form-group">
+		    <input type="password" class="form-control" name="password_conf" placeholder="Password Confirmation*" maxlength="30" required>
+		     <?php if (isset($err_passlength)) { echo $err_passlength; } ?>
+		      <?php if (isset($err_confirmation)) { echo $err_confirmation; } ?>
+		  </div>
 		  <div class="form-group">
 		    <input type="text" class="form-control" name="firstname" id="first-name" placeholder="First Name *" maxlength="30" required>
 		  </div>
@@ -168,6 +174,7 @@
 		  <div class="form-group">
 		    <input type="email" class="form-control" name="email" id="email" placeholder="Email *" required>
 		     <?php if (isset($err_email)) { echo $err_email; } ?>
+		     <?php if (isset($err_username)) { echo $err_username; } ?>
 		  </div>
 		  <div class="form-group">
 		    <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone *" maxlength="30" required>

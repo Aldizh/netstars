@@ -19,7 +19,7 @@
 		$result = mysql_query($sql_read);
 		if ($result == false){die(var_dump(mysql_error()));}
 		$row = mysql_fetch_row($result);
-		if ($row[4] == $_POST["password"]){
+		if ($row[4] == sha1($_POST["password"])){
 			$_SESSION["id"] = $row[0];
 			if ($row[28] == 1){
 				$_SESSION["admin"] = true;

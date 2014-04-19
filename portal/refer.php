@@ -23,7 +23,7 @@
 	<section class="col-lg-9 col-md-9 col-sm-9">
 		<div class="panel panel-default">
 		  <div class="panel-body">
-		    Your Referral Link: http://www.mypledge4tibet.org/
+		    Your Referral Link: http://tashiciao.ciaocrm.com/aldi/netstar/signup.php?code=<?echo $referralcode?>
 		  </div>
 		</div>
 		<div class="panel panel-default">

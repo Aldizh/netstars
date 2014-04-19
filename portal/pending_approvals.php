@@ -17,9 +17,50 @@
 	if ($result == false){die(var_dump(mysql_error()));}
 
 	if (isset($_GET["activate"]) and $_GET["activate"] == "true"){
-		$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `status` = 'acttive' WHERE `customers`.`ID` = '$_GET[id]';";
+		$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `status` = 'active' WHERE `customers`.`ID` = '$_GET[id]';";
 		$result_update = mysql_query($sql_update);
 		if ($result_update == false){die(var_dump(mysql_error()));}
+
+		//script for calculating enroller bonus
+		$creditAmount = 0;
+		$commission = 0;
+		
+		//assume we have the $id
+		$sql_read = "SELECT * FROM `customers` WHERE ID like '$_GET[id]'";
+		$result = mysql_query($sql_read);
+		if ($result == false){die(var_dump(mysql_error()));}
+		$row = mysql_fetch_assoc($result);
+		if ($row["membership_type"] == "partner"){
+			die("Not qualified for bonus");
+		}
+		if ($row["membership_type"] == "personal"){
+			$creditAmount = 0.02*300;
+			$commission = 20;
+		}
+		else if ($row["membership_type"] == "business"){
+			$creditAmount = 0.02*1500;
+			$commission = 100;
+		}
+		$sql_read = "SELECT * FROM `customers` WHERE ID like '$row[enroller_ID]'";
+		$result = mysql_query($sql_read);
+		if ($result == false){die(var_dump(mysql_error()));}
+		$row = mysql_fetch_assoc($result);
+		$cashbalance = $row["cashbalance"];
+		$creditbalance = $row["creditbalance"];
+		if ($row["membership_type"]){
+			if ($row["membership_type"] == "partner"){
+				$creditbalance += $creditAmount;
+				$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `creditbalance` = '$creditbalance' WHERE ID like '$row[ID]';";
+				$result_update = mysql_query($sql_update);
+				if ($result_update == false){die(var_dump(mysql_error()));}
+			}
+			else{
+				$cashbalance += $commission;
+				$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `cashbalance` = '$cashbalance' WHERE ID like '$row[ID]';";
+				$result_update = mysql_query($sql_update);
+				if ($result_update == false){die(var_dump(mysql_error()));}
+			}
+		}
 		header("Location: pending_approvals.php"); 
 	}
 ?>
