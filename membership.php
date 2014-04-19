@@ -27,5 +27,8 @@
 		</section>
 		
 	</div>
+	<div class="row packages-wrapper">
+		<img src="images/nexxstars-ad-banner.jpg" class="img-responsive" alt="Nexxstars Ad Banner">
+	</div>
 
 <?php include('includes/footer.php'); ?>

@@ -58,7 +58,7 @@
 			<input type="checkbox" name="terms" value="agree_terms" required> Li e aceito os <a href="#" data-toggle="modal" data-target=".terms">Termos e Condições</a>
 		  </div>
 		  <div class="form-group">
-			<input type="checkbox" name="terms" value="agree_policy" required> Li e aceito as <a href="../includes/NeXXStarsPP.pdf" target="_blank">Regras e Procedimentos </a>
+			<input type="checkbox" name="terms" value="agree_policy" required> Li e aceito as <a href="includes/NeXXStarsPP-pt.pdf" target="_blank">Regras e Procedimentos </a>
 		  </div>
 		  <button type="submit" class="btn btn-primary">Continuar</button>
 		</form>
