@@ -130,23 +130,23 @@
 					  <div class="radio">
 					    <label>
 					      <input type="radio" name="optionsRadios" id="partner" value="partner" checked>
-					      <label>Partner</label>
-					    </label>
+						  <a id="popover" rel="popover" data-content="">Partner</a>
+						</label>
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
  					 <div class="radio">
  					   <label>
- 					     <input type="radio" name="optionsRadios" id="personal" value="personal" >
-					      <label>Personal</label>
+ 					     <input type="radio" name="optionsRadios" id="personal" value="personal">
+						  <a id="popover2" rel="popover" data-content="">Personal</a>
  					   </label>
  					 </div>
 				  </div>
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					  <div class="radio">
 					    <label>
-					      <input type="radio" name="optionsRadios" id="business" value="business" >
-					      <label>Business</label>
+					      <input type="radio" name="optionsRadios" id="business" value="business">
+						  <a id="popover3" rel="popover" data-content="">Personal</a>
 					    </label>
 					  </div>
 				  </div>
@@ -178,6 +178,12 @@
 		  </div>
 		  <div class="form-group">
 		    <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone *" maxlength="30" required>
+		  </div>
+		  <div class="form-group">
+			<input type="checkbox" name="terms" value="agree_terms" required> I accept the <a href="#" data-toggle="modal" data-target=".terms">Terms and Conditions</a>
+		  </div>
+		  <div class="form-group">
+			<input type="checkbox" name="terms" value="agree_policy" required> I accept the <a href="includes/NeXXStarsPP.pdf" target="_blank">Policies and Procedures</a>
 		  </div>
 		  <button type="submit" class="btn btn-primary">Continue</button>
 		</form>
@@ -233,3 +239,15 @@ function sanitize($input) {
 }
 ?>
 <?php include('includes/footer.php'); ?>
+<script>
+	var image = '<img src="images/membership-partner-popover.jpg">';
+	$('#popover').popover({placement: 'top', trigger: 'hover', content: image, html: true});
+</script>
+<script>
+	var image = '<img src="images/membership-personal-popover.jpg">';
+	$('#popover2').popover({placement: 'top', trigger: 'hover', content: image, html: true});
+</script>
+<script>
+	var image = '<img src="images/membership-business-popover.jpg">';
+	$('#popover3').popover({placement: 'top', trigger: 'hover', content: image, html: true});
+</script>
