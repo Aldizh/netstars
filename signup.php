@@ -129,9 +129,9 @@
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					  <div class="radio">
 					    <label>
-					      <input type="radio" name="optionsRadios" id="partner" value="partner">
+					      <input type="radio" name="optionsRadios" id="partner" value="partner" checked>
 						  <a id="popover" rel="popover" data-content="">Partner</a>
-					      
+						</label>
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
