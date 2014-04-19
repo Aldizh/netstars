@@ -130,15 +130,15 @@
 					  <div class="radio">
 					    <label>
 					      <input type="radio" name="optionsRadios" id="partner" value="partner">
-					      <label>Partner</label>
-					    </label>
+						  <a id="popover" rel="popover" data-content="">Partner</a>
+					      
 					  </div>
 				  </div>
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
  					 <div class="radio">
  					   <label>
  					     <input type="radio" name="optionsRadios" id="personal" value="personal">
-					      <label>Personal</label>
+						  <a id="popover2" rel="popover" data-content="">Personal</a>
  					   </label>
  					 </div>
 				  </div>
@@ -146,7 +146,7 @@
 					  <div class="radio">
 					    <label>
 					      <input type="radio" name="optionsRadios" id="business" value="business">
-					      <label>Business</label>
+						  <a id="popover3" rel="popover" data-content="">Personal</a>
 					    </label>
 					  </div>
 				  </div>
@@ -239,3 +239,15 @@ function sanitize($input) {
 }
 ?>
 <?php include('includes/footer.php'); ?>
+<script>
+	var image = '<img src="images/membership-partner-popover.jpg">';
+	$('#popover').popover({placement: 'top', trigger: 'hover', content: image, html: true});
+</script>
+<script>
+	var image = '<img src="images/membership-personal-popover.jpg">';
+	$('#popover2').popover({placement: 'top', trigger: 'hover', content: image, html: true});
+</script>
+<script>
+	var image = '<img src="images/membership-business-popover.jpg">';
+	$('#popover3').popover({placement: 'top', trigger: 'hover', content: image, html: true});
+</script>
