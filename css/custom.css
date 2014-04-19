@@ -395,3 +395,16 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 	width: 10.4em;
 	margin:1.6em auto;
 }
+
+/** web store **/
+.store-container .thumbnail {
+	text-align: center;
+}
+.store-container {
+	width: 85%;
+	margin: auto;
+}
+.checkbox {
+	width: 30px;
+	margin: auto;
+}
