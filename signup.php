@@ -179,6 +179,12 @@
 		  <div class="form-group">
 		    <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone *" maxlength="30" required>
 		  </div>
+		  <div class="form-group">
+			<input type="checkbox" name="terms" value="agree_terms" required> I accept the <a href="#" data-toggle="modal" data-target=".terms">Terms and Conditions</a>
+		  </div>
+		  <div class="form-group">
+			<input type="checkbox" name="terms" value="agree_policy" required> I accept the <a href="includes/NeXXStarsPP.pdf" target="_blank">Policies and Procedures</a>
+		  </div>
 		  <button type="submit" class="btn btn-primary">Continue</button>
 		</form>
 	 	<script>
