@@ -39,7 +39,7 @@
 			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
 				<div class="box">
 					<h2><span class="glyphicon glyphicon-asterisk"></span> Coin Wallet</h2>
-					<h3> $<? echo $cash; ?></h3>
+					<h3><? echo $cash; ?></h3>
 					<p>coins</p>
 				</div>
 			</section>
