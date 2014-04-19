@@ -1,0 +1,28 @@
+<div class="modal fade terms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+		<div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title">Términos y condiciones</h4>
+		      </div>
+		      <div class="modal-body">
+		      	
+				<h4> 1 . Aceptación de las Condiciones </h4>
+				<p> Este Acuerdo ( el 'Acuerdo') especifica los términos y condiciones para el acceso y uso de la página web NeXXStars : www.nexxstars.com (el 'sitio ') . El presente Acuerdo podrá ser modificado en cualquier momento por NeXXStars después de la publicación del acuerdo modificado . Estas modificaciones entrarán en vigor inmediatamente . El sitio web es proporcionada por NeXXStars , . (Empresa) . Mediante el uso de este sitio web y los servicios relacionados (el "Sitio " ) se considera que usted ha leído y acepta estar legalmente sometido a los siguientes términos y condiciones ( "Términos") de este Acuerdo de Usuario ("Acuerdo" ) . Cuando se utiliza cualquier otro NeXXStars servicios que usted está sujeto a las directrices o reglas publicadas que pueden aplicarse a dichos servicios . Todas estas directrices y normas aplicables a este tipo de servicios se incorporan por referencia en los Términos. Si usted tiene alguna pregunta sobre el Acuerdo, usted puede ponerse en contacto con nosotros en support@NeXXStars.com o por teléfono al
+				855-463-7486 ( 855-4 - NEXXSTARS ) . </p>
+
+
+				<h4> 2 . Descripción del Servicio </h4>
+				<p> NeXXStars ofrece a sus socios y clientes de la marca con un sitio web personal, personalizable que permite a nuestros socios de marca y clientes para vender los productos y servicios NeXXStars o se refieren a otros clientes a NeXXStars a comprar productos o servicios NeXXStars . Socios de marca de la compañía pueden usar su sitio web personalizado para introducir a otros a la oportunidad NeXXStars Brand Partner. Además, NeXXStars ofrece a sus socios y clientes de la marca con un Centro de Cuentas Centro de negocios / personal basado en la web . Esto proporciona a los socios y clientes de la marca con el acceso a su información personal, como contraseñas , producto de los envíos automáticos de pedido y pago , y el Cliente y la información del equipo Brand Partner. Este centro cuenta también proporciona acceso a la tienda que vende NeXXStars impresión, ropa y productos promocionales , tales como tarjetas de visita, membretes , sobres , tarjetas de felicitación plegadas , postales, y herramientas de ventas a través de su sitio web. A menos que se especifique lo contrario , cualquier nueva aplicación que mejoran o modifican el servicio actual también estarán sujetos a las presentes Condiciones . Cada uso de este servicio por su parte constituirá y se considerará como su aceptación incondicional del presente Acuerdo. </p>
+
+				<h4> 3 . Cuenta de Usuario, Contraseña , Seguridad y Terminación </h4>
+				<p> Brand Partners y Clientes Preferentes iniciar sesión con su nombre de usuario y contraseña que se almacena y gestiona en el Centro de Negocios de la Brand Partner o cuenta personal del cliente en el sitio web NeXXStars.com existente. Los clientes minoristas registrarse directamente en los NeXXStars . com sitio recibirá una contraseña y una cuenta una vez completado el proceso de registro del sitio. Usted es responsable de mantener la confidencialidad de su contraseña y cuenta, y es completamente responsable de todas las actividades que ocurran bajo su contraseña o cuenta. Usted se compromete a ( a) notificar inmediatamente NeXXStars de cualquier uso no autorizado de su contraseña o cuenta o cualquier otra violación de seguridad, y ( b ) asegurarse de salir de su cuenta al final de cada sesión. NeXXStars no puede y no será responsable por cualquier pérdida o daño causado por su incumplimiento de esta Sección 3.</p>
+
+				<p> Usted acepta que NeXXStars , a su sola discreción, puede cancelar su contraseña , cuenta (o cualquier parte del mismo ) o uso del Sitio, y retirar y eliminar cualquier Contenido que usted pudo haber contribuido al Sitio, en cualquier momento y por cualquier razón. NeXXStars también podrá a su sola discreción y en cualquier momento, interrumpir el Sitio o cualquier parte del mismo , con o sin previo aviso. Usted acepta que cualquier terminación de su acceso al Sitio bajo cualquier disposición de este Acuerdo se puede efectuar sin previo aviso, y reconoce y acepta que NeXXStars puede inmediatamente desactivar o eliminar su cuenta y toda la información y archivos relacionados en su cuenta y / o en el bar cualquier nuevo acceso a dichos archivos del sitio. Además, usted acepta que NeXXStars no será responsable ante usted o cualquier tercero por cualquier terminación de su acceso al Sitio. Si usted se opone a los términos y condiciones del Acuerdo o no esté satisfecho con el Sitio de cualquier manera , su único recurso es interrumpir inmediatamente su uso del Sitio y / o cancelar su cuenta . </p>
+
+				<h4> 4 . Política de privacidad </h4>
+				<p> Su privacidad es muy importante para NeXXStars . Los usuarios de este Sitio deben consultar nuestra Política de privacidad para obtener información acerca de cómo NeXXStars colecciona y utiliza su información personal. Al aceptar este Acuerdo , usted autoriza expresamente a la divulgación y el uso de su información personal por NeXXStars (incluyendo el uso de correo electrónico para comunicarse con usted) como se describe en la Política de Privacidad. <p>
+		      </div>
+    </div>
+  </div>
+</div>

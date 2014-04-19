@@ -3,18 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>NexXFree | Network of Tech Products for Entrepreneurs</title>
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
-	<link href="../css/custom.css" rel="stylesheet">
+	<title>NetXFree | Network of Tech Products for Entrepreneurs</title>
+	<link href="../../../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../../css/custom.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Averia Serif Libre">
-	<script src="../js/respond.min.js"></script>
+	<script src="../../../js/respond.min.js"></script>
 </head>
 
 <body>
 	<div class="container-fluid">
 		<section class="row header">
 			<div class="col-lg-2 col-md-2 col-sm-6 hidden-xs text-center">
-				<a href="index.php"><img src="../images/logo.png" alt="Logo"></a>
+				<a href="index.php"><img src="../../images/logo.png" alt="Logo"></a>
 				<p style="color: #FFF; font-size: 0.8em; margin-left:4.2em;"><em>Technology Crowdsourced</em></p>
 			</div>
 			<div class="col-xs-6 text-center visible-xs">
@@ -27,20 +27,19 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li><a href="about.php">Empresa</a></li>
-								<li><a href="membership.php">Filiação</a></li>
-								<li><a href="products.php">Produtos</a></li>
-								<li><a href="opportunity.php">Oportunidade</a></li>
-								<li><a href="#" data-toggle="modal" data-target=".contact-us">Contato</a></li>
-								<li><a class="btn btn-default btn-md" href="../signup.php">Cadastre-se</a></li>
-								<li><a class="btn btn-default btn-lg" data-toggle="modal" data-target=".login-modal">LOGIN</a></li>
+								<li><a href="about.php">About</a></li>
+								<li><a href="membership.php">Membership</a></li>
+								<li><a href="products.php">Products</a></li>
+								<li><a href="opportunity.php">Opportunity</a></li>
+								<li><a href="#" data-toggle="modal" data-target=".contact-us">Contact Us</a></li>
+								<li><a class="btn btn-default btn-md" href="#">LOGOUT</a></li>
 								<li class="dropdown" style="font-size: 90%; font-weight: bold;">
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								      PT <span class="caret"></span>
+								      EN <span class="caret"></span>
 								    </a>
 								    <ul class="dropdown-menu">
-								      <li><a href="../index.php">EN</a></li>
-								      <li><a href="../es/index.php">ES</a></li>
+								      <li><a href="es/index.php">ES</a></li>
+								      <li><a href="pt/index.php">PT</a></li>
 								    </ul>
 								  </li>
 							</ul>
@@ -67,17 +66,17 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="navs-for-mobile">
 							<ul class="nav navbar-nav">
-								<li><a href="about.php">Empresa</a></li>
-								<li><a href="membership.php">Filiação</a></li>
-								<li><a href="products.php">Produtos</a></li>
-								<li><a href="opportunity.php">Oportunidade</a></li>
+								<li><a href="about.php">About</a></li>
+								<li><a href="membership.php">Membership</a></li>
+								<li><a href="products.php">Products</a></li>
+								<li><a href="opportunity.php">Opportunity</a></li>
 								<li class="dropdown" style="font-size: 90%; font-weight: bold;">
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								      PT <span class="caret"></span>
+								      EN <span class="caret"></span>
 								    </a>
 								    <ul class="dropdown-menu">
-								      <li><a href="../index.php">EN</a></li>
-								      <li><a href="../es/index.php">ES</a></li>
+								      <li><a href="es/index.php">ES</a></li>
+								      <li><a href="pt/index.php">PT</a></li>
 								    </ul>
 								  </li>
 								<!-- 
@@ -90,10 +89,7 @@
 			</div>
 		</section>
 		<section class="row visible-xs login-signup-mobile">
-			<div class="col-xs-6 text-right">
-				<a href="signup.php" class="btn btn-primary btn-sm">JOIN NOW</a>
-			</div>
-			<div class="col-xs-6">
-				<a class="btn btn-primary btn-sm" data-toggle="modal" data-target=".login-modal">LOGIN</a>
+			<div class="col-xs-12 text-center">
+				<a href="#" class="btn btn-success btn-sm">LOGOUT</a>
 			</div>
 		</section>
