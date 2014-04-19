@@ -129,7 +129,7 @@
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					  <div class="radio">
 					    <label>
-					      <input type="radio" name="optionsRadios" id="partner" value="partner">
+					      <input type="radio" name="optionsRadios" id="partner" value="partner" checked>
 					      <label>Partner</label>
 					    </label>
 					  </div>
@@ -137,7 +137,7 @@
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
  					 <div class="radio">
  					   <label>
- 					     <input type="radio" name="optionsRadios" id="personal" value="personal">
+ 					     <input type="radio" name="optionsRadios" id="personal" value="personal" >
 					      <label>Personal</label>
  					   </label>
  					 </div>
@@ -145,7 +145,7 @@
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					  <div class="radio">
 					    <label>
-					      <input type="radio" name="optionsRadios" id="business" value="business">
+					      <input type="radio" name="optionsRadios" id="business" value="business" >
 					      <label>Business</label>
 					    </label>
 					  </div>

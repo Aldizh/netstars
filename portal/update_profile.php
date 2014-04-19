@@ -4,12 +4,53 @@
 	include("../includes-in/header.php");
 	include("../config.php");
 ?>
+<?
+	$config = new Config();
+	$connection = $config->connect("209.200.231.164", "ciaot1", "mSaKSeZXt0TK");
+	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
+	if(!$dbconn){die("Could not select DB");}
 
+	if (isset($_POST["password"]) || isset($_POST["email"]) || isset($_POST["position"])){
+		$_SESSION["password"] = $_POST["password"];
+		$_SESSION["email"] =  $_POST["email"];
+		$_SESSION["position"] = $_POST["optionsRadios"];
+		header("Location: ../includes/update_modal.php"); 
+	}
+	if (isset($_POST["oldpass"])){
+		$sql_read = "SELECT * FROM `customers` WHERE ID like '$_SESSION[id]'";
+		$result = mysql_query($sql_read);
+		if ($result == false){die(var_dump(mysql_error()));}
+		$row = mysql_fetch_row($result);
+		if ($row[4] != sha1($_POST["oldpass"])){
+			echo sha1($row[4]);
+			echo $_POST["oldpass"];
+			header("Location: ../includes/update_modal.php?valid=false");
+		}
+		else{
+			$password = sha1($_POST["oldpass"]);
+			$email =  $_SESSION["email"];
+			$position = $_SESSION["position"];
+			$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `password` = '$password', `email` = '$email', `position` = '$position' WHERE `customers`.`ID` = '$_SESSION[id]';";
+			$result_update = mysql_query($sql_update);
+			if ($result_update == false){die(var_dump(mysql_error()));}
+		}
+	}
+
+	$sql_read = "SELECT * FROM `customers` WHERE ID like '$_SESSION[id]'";
+	$result = mysql_query($sql_read);
+	if ($result == false){die(var_dump(mysql_error()));}
+	$row = mysql_fetch_row($result);
+	$username = $row[3];
+	$password = $row[4];
+	$firstname = $row[6];
+	$lastname = $row[7];
+	$email = $row[8];
+	$position = $row[10];
+	$phone = $row[31];
+?>
 <!-- PORTAL CONTENT starts -->
 <div class="container" id="portal-wrapper">
 	<div class="row">
-		<!-- MENU-->
-		<?php include("../includes/portal-menu.php"); ?>
 		<!-- END of MENU -->
 		
 		<!-- DASHBOARD starts -->
@@ -17,27 +58,24 @@
 			<!-- DASHBOARD Wrapper-->
 			<form class="form-horizontal" action="<?$_SERVER['PHP_SELF']?>" method="post" role="form">
 			  <div class="form-group">
-			    <label for="Username" class="col-sm-4 control-label">Username</label>
+			  	Leg preference
+			  </div>
+			  <div class="form-group">
+			    <label for="position" class="col-sm-4 control-label">Left</label>
 			    <div class="col-sm-5">
-			      <input type="text" name="username" class="form-control" id="inputEmail3" value=<?= $username;?> disabled>
+					<input type="radio" name="optionsRadios" id="partner" value="left" <?if ($position == "left"){?>checked<?}?>>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="position" class="col-sm-4 control-label">Right</label>
+			    <div class="col-sm-5">
+					<input type="radio" name="optionsRadios" id="partner" value="right" <?if ($position == "right"){?>checked<?}?>>
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="Password" class="col-sm-4 control-label">Password</label>
 			    <div class="col-sm-5">
-			      <input type="password" name="password" class="form-control" id="inputPassword3" value=<?= $password;?> disabled>
-			    </div>
-			  </div>
-			 <div class="form-group">
-			    <label for="First" class="col-sm-4 control-label">First Name</label>
-			    <div class="col-sm-5">
-			      <input type="text" name="firstname" class="form-control" id="inputEmail3" value=<?= $firstname;?> >
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="Last" class="col-sm-4 control-label">Last Name</label>
-			    <div class="col-sm-5">
-			      <input type="text" name="lastname" class="typeahead form-control" id="inputEmail3" value=<?= $lastname;?> >
+			      <input type="password" name="password" class="form-control" id="inputPassword3" value=<?= $password;?> >
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -47,50 +85,12 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="Last" class="col-sm-4 control-label">Phone</label>
 			    <div class="col-sm-5">
-			      <input type="text" name="phone" class="form-control" id="inputEmail3" value=<?= $phone;?> >
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="address" class="col-sm-4 control-label">Address</label>
-			    <div class="col-sm-5">
-			      <input type="textarea" name="address" class="form-control" id="address" value=<? foreach ($b_arr as $a){echo $a;}?> >
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="city" class="col-sm-4 control-label">City</label>
-			    <div class="col-sm-3">
-			      <input type="text" name="city" class="form-control" id="inputEmail3" value=<?= $city;?> >
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="zip" class="col-sm-4 control-label">Zip</label>
-			    <div class="col-sm-3">
-			      <input type="text" name="zip" class="form-control" id="inputEmail3" value=<?= $zip;?> >
-			    </div>
-				</label>
-			  </div>
-			  <div class="form-group">
-			    <label for="zip" class="col-sm-4 control-label">State</label>
-			    <div class="col-sm-3">
-			      <input type="text" name="state" class="form-control" id="state" value=<?= $state;?> >
-			    </div>
-				</label>
-			  </div>
-			  <div class="form-group">
-			    <label for="country" class="col-sm-4 control-label">Country</label>
-			    <div class="col-sm-3">
-			      <input type="text" name="country" class="form-control" id="state" value=<?= $country;?> >
-			    </div>
-				</label>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-4 col-sm-5">
-			      <button type="submit" class="btn btn-default">Update</button>
+			      <button type="submit" class="btn btn-primary">Update</button>
 			    </div>
 			  </div>
 			</form>
 		</section>
 	</div>
 </div>
+<?include("../includes-in/footer.php");?>
