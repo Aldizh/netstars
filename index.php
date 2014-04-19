@@ -21,6 +21,12 @@
 		$row = mysql_fetch_row($result);
 		if ($row[4] == $_POST["password"]){
 			$_SESSION["id"] = $row[0];
+			if ($row[28] == 1){
+				$_SESSION["admin"] = true;
+			}
+			else{
+				$_SESSION["admin"] = false;
+			}
 			header("Location: portal/home.php"); 
 		} 
 		else{

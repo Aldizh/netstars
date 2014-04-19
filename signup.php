@@ -79,8 +79,8 @@
 		$sql_read = "INSERT INTO `ciaot1_netex`.`customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `level`, `sponsor_ID`, `position`, `membership_type`, `weekly_qualification`, `monthly_qualification`, `tree_qualification`, `global_cap`, `binary_cap`, `monthly_expiration`, `yearly_expiration`, `cashbalance`, `creditbalance`, `pointsbalance`, `leftpoints`, `rightpoints`, `numberofclicks`, `status`)
 													VALUES (NULL, '$username', '$password', NULL, '$firstname', '$lastname', '$email', '1', '$sponsor_id', 'right', '$membership', '0', '0', '0', '$bonus_cap', '0', '$month_date', '$year_date', '0', '0', '0', '0', '0', '0', 'pending');";
 		$result = mysql_query($sql_read);
-		//if (mysql_error() == "Duplicate entry 'aldizh' for key 'username'"){echo "Username Hhs to be unique";}
-		if ($result == false){die(var_dump(mysql_error()));}
+		if (mysql_error() == "Duplicate entry 'aldizh' for key 'username'"){$err_username = "Username has to be unique";}
+		else if ($result == false){die(var_dump(mysql_error()));}
 		$id = mysql_insert_id();
 		$_SESSION["id"] = $id;
 
@@ -103,7 +103,7 @@
 		$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `position` = '$position', `referralcode` = '$referralcode', `enroller_ID` = '$enroller_id' WHERE `customers`.`ID` = '$id';";
 		$result_update = mysql_query($sql_update);
 		if ($result_update == false){die(var_dump(mysql_error()));}
-		if(!$err_email and !$err_passlength){
+		if(!$err_email and !$err_passlength and !$err_username){
 			header("Location: thanks.php"); 
 		}
 	}
@@ -153,6 +153,7 @@
 		  </div>
 		  <div class="form-group">
 		    <input type="text" class="form-control" name="username" placeholder="User Name *" maxlength="30" required>
+		    <?php if (isset($err_username)) { echo $err_username; } ?>
 		  </div>
 		  <div class="form-group">
 		    <input type="password" class="form-control" name="password" placeholder="Password *" maxlength="30" required>

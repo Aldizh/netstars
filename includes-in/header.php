@@ -32,6 +32,9 @@
 								<li><a href="../membership.php">Membership</a></li>
 								<li><a href="../products.php">Products</a></li>
 								<li><a href="../opportunity.php">Opportunity</a></li>
+								<?if ($_SESSION["admin"] == true){?>
+									<li><a href="pending_approvals.php">Approvals</a></li>
+								<?}?>
 								<li><a href="#" data-toggle="modal" data-target=".contact-us">Contact Us</a></li>
 								<li><a class="btn btn-default btn-md" href="../index.php?logout=true">LOGOUT</a></li>
 								<li class="dropdown" style="font-size: 90%; font-weight: bold;">
