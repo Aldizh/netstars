@@ -3,8 +3,10 @@
  session_start();
  include("includes/header.php");
  include("config.php");
+ $title = "NexxStars | Network of Tech Products for Entrepreneurs"
 ?>
-<?
+
+<?/*
 	$config = new Config();
 	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
@@ -33,7 +35,7 @@
 		else{
 			echo "Invalid Password";
 		}
-	} 
+	} */
 ?>
 <section class="row banner-home">
 	<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
