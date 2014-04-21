@@ -6,7 +6,6 @@
 ?>
 
 <?
-/*
 	$config = new Config();
 	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
@@ -61,7 +60,7 @@
 		$result_user1 = mysql_query($sql_read_user1);
 		if ($result_user1 == false){die(var_dump(mysql_error()));}
 		$row_user1 = mysql_fetch_row($result_user1);
-
+ 
 		if (($row_user1[5]) != $referralcode){
 			$err_ref_unique = '<div class="error">Please check you your referral code.</div>';
 		}
@@ -89,7 +88,7 @@
 			}
 
 		}
-	}*/
+	}
 ?>
 <div class="row signup-container">
 	<section class="form-box">
