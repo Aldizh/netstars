@@ -30,14 +30,13 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li><a href="portal/home.php">Dashboard</a></li>
+								<?if ($_SESSION["id"] != NULL){?>
+									<li><a href="portal/home.php">Dashboard</a></li>
+								<?}?>
 								<li><a href="about.php">About</a></li>
 								<li><a href="membership.php">Membership</a></li>
 								<li><a href="products.php">Products</a></li>
 								<li><a href="opportunity.php">Opportunity</a></li>
-								<?if ($_SESSION["admin"] == true){?>
-									<li><a href="portal/pending_approvals.php">Approvals</a></li>
-								<?}?>
 								<li><a href="#" data-toggle="modal" data-target=".contact-us">Contact Us</a></li>
 								<? if ($_SESSION["id"] == NULL) {?>
 									<li><a class="btn btn-default btn-md" href="signup.php">JOIN NOW</a></li>
@@ -46,10 +45,10 @@
 									<li><a class="btn btn-default btn-md" href="index.php?logout=true">LOGOUT</a></li>
 								<?}?>
 								<li class="dropdown" style="font-size: 90%; font-weight: bold;">
-								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								    <!--a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								      EN <span class="caret"></span>
 								    </a>
-								    <!--ul class="dropdown-menu">
+								    <ul class="dropdown-menu">
 								      <li><a href="../index.php">EN</a></li>
 								      <li><a href="../es/index.php">ES</a></li>
 								    </ul-->
@@ -83,10 +82,10 @@
 								<li><a href="products.php">Products</a></li>
 								<li><a href="opportunity.php">Opportunity</a></li>
 								<li class="dropdown" style="font-size: 90%; font-weight: bold;">
-								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								    <!--a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								      EN <span class="caret"></span>
 								    </a>
-								    <!--ul class="dropdown-menu">
+								    <ul class="dropdown-menu">
 								      <li><a href="../index.php">EN</a></li>
 								      <li><a href="../es/index.php">ES</a></li>
 								    </ul-->
