@@ -1,5 +1,30 @@
-<?php include("../includes-in/header.php"); ?>
-<h1 class="text-center">NexXStar's Store</h1>
+<?php 
+	ob_start();
+	session_start(); 
+	include("../includes-in/header.php");
+	include("../config.php");
+?>
+<?
+	$config = new Config();
+	$connection = $config->connect("209.200.231.164", "ciaot1", "mSaKSeZXt0TK");
+	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
+	if(!$dbconn){die("Could not select DB");}
+
+	if ($_GET["user"]){$desc = $_GET["user"];}
+	else{
+		$desc = "NexXStar";
+	}
+	$regexp = "/[- a-zA-Z]+$/";
+	if (preg_match($regexp, $_GET["user"])){
+		$username = trim(htmlspecialchars($_GET["user"]));
+		$sql_read = "SELECT * FROM `customers` WHERE username like '$username'";
+		$result = mysql_query($sql_read);
+		if ($result == false){die(var_dump(mysql_error()));}
+		$row = mysql_fetch_row($result);
+		$_SESSION["username"] = $row[3];
+	}
+?>
+<h1 class="text-center"><?=$desc?>'s Store</h1>
 <div class="row store-container">
 	<form>
 		<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

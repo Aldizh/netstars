@@ -1,26 +1,43 @@
-<?php include("includes/header.php"); ?>
-	<section class="row banner-home">
-		<div class="order-info-wrapper">
-			<ul class="list-group">
-			<p>Your Info</p>
-			  <li class="list-group-item">First Name: <strong><?php echo $_POST["first-name"]; ?></strong></li>
-			  <li class="list-group-item">Last Name: <strong><?php echo $_POST["last-name"]; ?></strong></li>
-			  <li class="list-group-item">Email: <strong><?php echo $_POST["email"]; ?></strong></li>
-			  <li class="list-group-item">Phone Number: <strong><?php echo $_POST["phone"]; ?></strong></li>
-			</ul>
-		</div>
-		<div class="order-info-wrapper">
-			<ul class="list-group">
-			<p>Shipping Address</p>
-			  <li class="list-group-item">Address Line 1: <strong><?php echo $_POST["shipping-addr1"] ?></strong></li>
-			  <li class="list-group-item">Address Line 2: <strong><?php echo $_POST["shipping-addr2"] ?></strong></li>
-			  <li class="list-group-item">City: <strong><?php echo $_POST["shipping-city"] ?></strong></li>
-			  <li class="list-group-item">State: <strong><?php echo $_POST["shipping-state"] ?></strong></li>
-			  <li class="list-group-item">Zip/Pin Code: <strong><?php echo $_POST["shipping-zip"] ?></strong></li>
-			  <li class="list-group-item">Country: <strong><?php echo $_POST["shipping-country"] ?></strong></li>
-			</ul>
-		</div>
-		
-	</section>
+<?php 
+	session_start();
+	include("includes/header.php");
+	//echo $_SESSION["membership"];
+	//echo $_SESSION["id_pending"];
+?>
+
+<section class="row banner-home">
+	<div class="order-info-wrapper">
+		<? if ($_SESSION["membership"] == "partner"){ ?>
+			<h1>Partner Package</h1>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onsubmit="return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="JE4YM98DFNN4E">
+				<input type="hidden" name="custom" value="id=<?=$_SESSION["id_pending"]?>">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+
+		<?} else if ($_SESSION["membership"] == "personal"){?>
+			<h2>Personal Package</h2>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onsubmit="return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="FBLNS9SPCWBYY">
+				<input type="hidden" name="custom" value="id=<?=$_SESSION["id_pending"]?>">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+
+		<?} else {?>
+			<h2>Business Package</h2>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onsubmit="return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="LT2QV5NQ6BEQ6">
+				<input type="hidden" name="custom" value="id=<?=$_SESSION["id_pending"]?>">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		<?}?>
+	</div>
+</section>
 
 <?php include('includes/footer.php'); ?>

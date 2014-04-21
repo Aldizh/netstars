@@ -39,18 +39,20 @@
 									<li><a href="portal/pending_approvals.php">Approvals</a></li>
 								<?}?>
 								<li><a href="#" data-toggle="modal" data-target=".contact-us">Contact Us</a></li>
-								<li><a class="btn btn-default btn-md" href="signup.php">JOIN NOW</a></li>
 								<? if ($_SESSION["id"] == NULL) {?>
+									<li><a class="btn btn-default btn-md" href="signup.php">JOIN NOW</a></li>
 									<li><a class="btn btn-default btn-lg" data-toggle="modal" data-target=".login-modal">LOGIN</a></li>
+								<?} else{?>
+									<li><a class="btn btn-default btn-md" href="index.php?logout=true">LOGOUT</a></li>
 								<?}?>
 								<li class="dropdown" style="font-size: 90%; font-weight: bold;">
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								      EN <span class="caret"></span>
 								    </a>
-								    <ul class="dropdown-menu">
-								      <li><a href="es/index.php">ES</a></li>
-								      <li><a href="pt/index.php">PT</a></li>
-								    </ul>
+								    <!--ul class="dropdown-menu">
+								      <li><a href="../index.php">EN</a></li>
+								      <li><a href="../es/index.php">ES</a></li>
+								    </ul-->
 								  </li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
@@ -84,10 +86,10 @@
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								      EN <span class="caret"></span>
 								    </a>
-								    <ul class="dropdown-menu">
-								      <li><a href="es/index.php">ES</a></li>
-								      <li><a href="pt/index.php">PT</a></li>
-								    </ul>
+								    <!--ul class="dropdown-menu">
+								      <li><a href="../index.php">EN</a></li>
+								      <li><a href="../es/index.php">ES</a></li>
+								    </ul-->
 								  </li>
 								<!-- 
 									<li><button class="btn btn-default btn-lg" data-toggle="modal" data-target=".purchase-form">Get Started</button></li>
@@ -99,10 +101,10 @@
 			</div>
 		</section>
 		<section class="row visible-xs login-signup-mobile">
-			<div class="col-xs-6 text-right">
-				<a href="signup.php" class="btn btn-primary btn-sm">JOIN NOW</a>
-			</div>
 			<? if ($_SESSION["id"] == NULL) {?>
+				<div class="col-xs-6 text-right">
+					<a href="signup.php" class="btn btn-primary btn-sm">JOIN NOW</a>
+				</div>
 				<div class="col-xs-6">
 					<a class="btn btn-primary btn-sm" data-toggle="modal" data-target=".login-modal">LOGIN</a>
 				</div>

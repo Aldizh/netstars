@@ -6,7 +6,7 @@
 ?>
 <?
 	$config = new Config();
-	$connection = $config->connect("209.200.231.164", "ciaot1", "mSaKSeZXt0TK");
+	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
 	if(!$dbconn){die("Could not select DB");}
 
@@ -21,6 +21,7 @@
 		$row = mysql_fetch_row($result);
 		if ($row[4] == sha1($_POST["password"])){
 			$_SESSION["id"] = $row[0];
+			$_SESSION["membership"] = $row[11];
 			if ($row[28] == 1){
 				$_SESSION["admin"] = true;
 			}

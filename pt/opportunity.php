@@ -33,15 +33,15 @@
 		<img src="../images/boat.png" alt="Boat">
 	</section>
 	<section class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		<h1>Trabalhe com prêmios na vista</h1>
-		<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
+		<h1>Recompensas reais para o seu trabalho</h1>
+		<p>Nós recompensamos nossos parceiros de negócios e suas equipes diretas e indiretas com os lucros de seu trabalho duro. Não só os benefícios de nossas soluções Voz Digital, TV IP, telefones celulares ou soluções de publicidade, mas também uma mudança em seu estilo de vida. Alavanca sua rede e ganhe dinheiro com suas vendas!</p>
 	</section>
 </div>
 
 <div class="row opportunity-row-2">
 	<section class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 		<h1>Começar é fácil</h1>
-		<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. </p>
+		<p>Encontre um de nossos Parceiros de Negócios ou pessoais para te patrocinar e encaminhá-lo para o programa para começar a vender os nossos produtos e soluções. Construa a sua equipe, ganhe o seu caminho para o topo e se torne a próxima estrela.</p>
 	</section>
 	<section class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
 		<button class="btn btn-success btn-lg" style="margin-top: 3.0em;">Cadastre-se</button>

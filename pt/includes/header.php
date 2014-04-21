@@ -38,11 +38,11 @@
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								      PT <span class="caret"></span>
 								    </a>
-								    <ul class="dropdown-menu">
+								    <!--ul class="dropdown-menu">
 								      <li><a href="../index.php">EN</a></li>
 								      <li><a href="../es/index.php">ES</a></li>
-								    </ul>
-								  </li>
+								    </ul-->
+								</li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->

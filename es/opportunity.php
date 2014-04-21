@@ -33,15 +33,15 @@
 		<img src="../images/boat.png" alt="Boat">
 	</section>
 	<section class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		<h1>Trabaje con premios en vista</h1>
-		<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
+		<h1>Recompensas reales para su trabajo </h1>
+		<p>Premiamos a nuestros socios de negocios y sus equipos directos y indirectos con ganancias por su trabajo duro. no sólo los beneficios de la tecnología de última generación para voz digital, IP TV, teléfonos móviles o soluciones de publicidad, sino también un cambio en su estilo de vida. Aproveche su red y obtener dinero en efectivo para sus ventas!</p>
 	</section>
 </div>
 
 <div class="row opportunity-row-2">
 	<section class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-		<h1>Comenzar es fácil</h1>
-		<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. </p>
+		<h1>Empezar es fácil </h1>
+		<p>Encontra uno de nuestros negocios o socios personales para patrocinar y que se refieren al programa para comenzar a vender nuestros productos y soluciones. Construye tu equipo, ganar su camino a la cima y convertirse en la próxima estrella.</p>
 	</section>
 	<section class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
 		<button class="btn btn-success btn-lg" style="margin-top: 3.0em;">Regístrese</button>

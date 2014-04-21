@@ -1,21 +1,21 @@
 <?php
 	ob_start();
+	session_start();
 	include("includes/header.php");
 	include("config.php");
 ?>
 
 <?
 	$config = new Config();
-	$connection = $config->connect("209.200.231.164", "ciaot1", "mSaKSeZXt0TK");
+	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
 	if(!$dbconn){die("Could not select DB");}
-
-	$year_date = date("Y-m-d", strtotime("1 year"));
-	$month_date = date("Y-m-d", strtotime("28 days"));
-
-	if (isset($_POST["firstname"]) and isset($_POST["lastname"]) and isset($_POST["email"])){
+	
+	if (isset($_POST["firstname"]) and isset($_POST["lastname"]) and isset($_POST["email"]) and isset($_POST["phone"])){
 		$_POST = sanitize($_POST);
   		$_GET  = sanitize($_GET);
+
+  		$referralcode = $_GET["code"];
   		$username = $_POST["username"];
   		$password = $_POST["password"];
   		$password_conf = $_POST["password_conf"];
@@ -23,16 +23,46 @@
   			$err_confirmation = "Sorry, Passwords Need to Match.";
   		}
   		$password = sha1($password);
-		$firstname = $_POST["firstname"];
-		$lastname = $_POST["lastname"];
+
+  		//make sure name input is sanitized
+		preg_match('/[a-zA-Z]+/', $_POST["firstname"], $firstname);
+		preg_match('/[a-zA-Z]+/', $_POST["lastname"], $lastname);
+		if ($firstname[0] != $_POST["firstname"]){
+			$err_patternmatch = '<div class="error">Sorry, first and last name can only contain letters.</div>';
+		}
+		if ($lastname[0] != $_POST["lastname"]){
+			$err_patternmatch = '<div class="error">Sorry, first and last name can only contain letters.</div>';
+		}
+
+		$address = $_POST["fulladdress"];
 		$email = $_POST["email"];
 		$phone = preg_replace("/[^0-9]/", "", $_POST["phone"]);
 		$membership = $_POST["optionsRadios"];
-		if ($membership === "personal"){
-			$bonus_cap = 2500;
+		$_SESSION["membership"] = $membership;
+		$terms1 = $_POST["terms1"];
+		$terms2 = $_POST["terms2"];
+		if ($terms1 != "checked" || $terms2  != "checked"){
+			$err_terms = "Please agree to the terms frst!";
 		}
-		else if ($membership === "business" || $membership === "personal"){
-			$bonus_cap = 10000;
+
+		//Check for uniqueness on username and email
+		$sql_read_user = "SELECT * FROM `customers` WHERE username like '$username'";
+		$result_user = mysql_query($sql_read_user);
+		if ($result_user == false){die(var_dump(mysql_error()));}
+		$row_user = mysql_fetch_row($result_user);
+
+		if (($row_user[3]) == $username){
+			$err_unique = '<div class="error">Sorry, this username is already taken.</div>';
+		}
+
+		//check uniqueness of referral code
+		$sql_read_user1 = "SELECT * FROM `customers` WHERE referralcode like '$referralcode'";
+		$result_user1 = mysql_query($sql_read_user1);
+		if ($result_user1 == false){die(var_dump(mysql_error()));}
+		$row_user1 = mysql_fetch_row($result_user1);
+
+		if (($row_user1[5]) != $referralcode){
+			$err_ref_unique = '<div class="error">Please check you your referral code.</div>';
 		}
 
 		if (strlen($password) <= 6):
@@ -43,77 +73,20 @@
 		   $err_email = '<div class="error">Invalid Email</div>';
 		}
 
-		if ( !(preg_match('/[A-Za-z]+/', $firstname)) ){
-			$err_patternmatch = '<div class="error">Sorry, the name must be in the format: Last, First</div>';
-		}
-
-		//check and set the enroller
-		$enrollercode = $_POST["referral"];
-		$sql_read = "SELECT * FROM `customers` WHERE referralcode like '$enrollercode'";
-		$result = mysql_query($sql_read);
-		if ($result == false){die(var_dump(mysql_error()));}
-		$row = mysql_fetch_row($result);
-		$enroller_id = $row[0];
-		$sponsor_id = NULL;
-
-		if (!$_POST["referral"]){
-			$sponsor_id = NULL;
-			$enroller_id = NULL;
-		}
-		else{
-			$currentNode = $enroller_id;
-			$leftChild = $row[22];
-			$rightChild = $row[23];
-			$position = $row[10];
-			while (($leftChild != NULL and $position == "left") or ($rightChild != NULL and $position == "right")){
-				if ($position == "left"){$currentNode = $leftChild;}
-				else{$currentNode = $rightChild;}
-				//move the left child node down
-				$sql_read = "SELECT * FROM `customers` WHERE ID like '$currentNode'";
-				$result = mysql_query($sql_read);
-				if ($result == false){die(var_dump(mysql_error()));}
-				$row = mysql_fetch_row($result);
-				$leftChild = $row[22];
-				$rightChild = $row[23];
-				$position = $row[10];
-
+		if(!$err_email and !$err_passlength and !$err_patternmatch and !$err_confirmation and !$err_terms and !$err_username and !$err_unique and !$err_ref_unique){
+			//check and set the sponsor
+			$sql_insert = "INSERT INTO `ciaot1_netex`.`pending_customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `membership_type`, `phone`, `fulladdress`) VALUES (NULL, '$username', '$password', '$referralcode', '$firstname[0]', '$lastname[0]', '$email', '$membership', '$phone', '$address');";
+			$result = mysql_query($sql_insert);
+			if (substr(mysql_error(), 0, 9) === "Duplicate"){
+				$err_username = '<div class="error">Sorry, this username is already taken.</div>';
 			}
-			$sponsor_id = $currentNode;
-		}
-		//check and set the sponsor
-		$sql_read = "INSERT INTO `ciaot1_netex`.`customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `level`, `sponsor_ID`, `position`, `membership_type`, `weekly_qualification`, `monthly_qualification`, `tree_qualification`, `global_cap`, `binary_cap`, `monthly_expiration`, `yearly_expiration`, `cashbalance`, `creditbalance`, `pointsbalance`, `leftpoints`, `rightpoints`, `numberofclicks`, `status`, `phone`)
-													VALUES (NULL, '$username', '$password', NULL, '$firstname', '$lastname', '$email', '1', '$sponsor_id', 'right', '$membership', '0', '0', '0', '$bonus_cap', '0', '$month_date', '$year_date', '0', '0', '0', '0', '0', '0', 'pending', '$phone');";
-		$result = mysql_query($sql_read);
-		if (substr(mysql_error(), 0, 9) === "Duplicate"){
-			$err_username = "Username and Email has to be unique";
-		}
-		else if ($result == false){die(var_dump(mysql_error()));}
-		else{
-			$id = mysql_insert_id();
-			$_SESSION["id"] = $id;
-
-			if ($position == "left"){
-				$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `leftChild` = '$id' WHERE `customers`.`ID` = '$sponsor_id';";
-				$result_update = mysql_query($sql_update);
-				if ($result_update == false){die(var_dump(mysql_error()));}
-			}
+			else if ($result == false){die(var_dump(mysql_error()));}
 			else{
-				$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `rightChild` = '$id' WHERE `customers`.`ID` = '$sponsor_id';";
-				$result_update = mysql_query($sql_update);
-				if ($result_update == false){die(var_dump(mysql_error()));}
+				$id = mysql_insert_id();
+				$_SESSION["id_pending"] = $id;
+				header("Location: payment.php"); 
 			}
 
-			$referralcode = $id . uniqid();
-			if( ($id % 2) == 0 )
-		    	$position = "left";
-			else
-				$position = "right";
-			$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `position` = '$position', `referralcode` = '$referralcode', `enroller_ID` = '$enroller_id' WHERE `customers`.`ID` = '$id';";
-			$result_update = mysql_query($sql_update);
-			if ($result_update == false){die(var_dump(mysql_error()));}
-			if(!$err_email and !$err_passlength and !$err_username and !$err_confirmation){
-				header("Location: thanks.php"); 
-			}
 		}
 	}
 ?>
@@ -122,7 +95,8 @@
 		<h4> SIGN UP FORM </h4>
 		<form role="form" method="post" name="signup" id="signup" action="<? $_SERVER['PHP_SELF'] ?>">
   		  <div class="form-group">
-  		    <input type="text" name="referral" class="form-control" id="ref-code" placeholder="Referal Code*" value="<?=$_GET['code']?>" required>
+  		    <input type="text" name="referral" class="form-control" id="ref-code" placeholder="Referal Code* (Please Ask your referrer if you don't have one)" value="<?=$_GET['code']?>"  disabled required>
+  		    <?php if (isset($err_ref_unique)) { echo $err_ref_unique; } ?>
   		  </div>
   		  <div class="form-group">
 		      <section class="row">
@@ -130,7 +104,7 @@
 					  <div class="radio">
 					    <label>
 					      <input type="radio" name="optionsRadios" id="partner" value="partner" checked>
-						  <a id="popover" rel="popover" data-content="">Partner</a>
+						  <a id="popover" rel="popover" data-content="">Partner ($49.99)</a>
 						</label>
 					  </div>
 				  </div>
@@ -138,7 +112,7 @@
  					 <div class="radio">
  					   <label>
  					     <input type="radio" name="optionsRadios" id="personal" value="personal">
-						  <a id="popover2" rel="popover" data-content="">Personal</a>
+						  <a id="popover2" rel="popover" data-content="">Personal ($349.99)</a>
  					   </label>
  					 </div>
 				  </div>
@@ -146,45 +120,51 @@
 					  <div class="radio">
 					    <label>
 					      <input type="radio" name="optionsRadios" id="business" value="business">
-						  <a id="popover3" rel="popover" data-content="">Personal</a>
+						  <a id="popover3" rel="popover" data-content="">Business ($1549.99)</a>
 					    </label>
 					  </div>
 				  </div>
 			  </section>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="username" placeholder="User Name *" maxlength="30" required>
+		    <input type="text" class="form-control" name="username" placeholder="User Name *" maxlength="30" value="" required>
 		    <?php if (isset($err_username)) { echo $err_username; } ?>
+		    <?php if (isset($err_unique)) { echo $err_unique; } ?>
 		  </div>
 		  <div class="form-group">
-		    <input type="password" class="form-control" name="password" placeholder="Password *" maxlength="30" required>
+		    <input type="password" class="form-control" name="password" placeholder="Password *" maxlength="30" value="" required>
 		     <?php if (isset($err_passlength)) { echo $err_passlength; } ?>
 		  </div>
 		   <div class="form-group">
-		    <input type="password" class="form-control" name="password_conf" placeholder="Password Confirmation*" maxlength="30" required>
+		    <input type="password" class="form-control" name="password_conf" placeholder="Password Confirmation*" value="" maxlength="30" required>
 		     <?php if (isset($err_passlength)) { echo $err_passlength; } ?>
 		      <?php if (isset($err_confirmation)) { echo $err_confirmation; } ?>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="firstname" id="first-name" placeholder="First Name *" maxlength="30" required>
+		    <input type="text" class="form-control" name="firstname" id="first-name" placeholder="First Name *" maxlength="30" value="" required>
+		    <?php if (isset($err_patternmatch)) { echo $err_patternmatch; } ?>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="lastname" id="last-name" placeholder="Last Name *" maxlength="30" required>
+		    <input type="text" class="form-control" name="lastname" id="last-name" placeholder="Last Name *" maxlength="30" value="" required>
 		  </div>
 		  <div class="form-group">
-		    <input type="email" class="form-control" name="email" id="email" placeholder="Email *" required>
+		    <input type="text" class="form-control" name="fulladdress" placeholder="Address *" maxlength="70" value="" required>
+		  </div>
+		  <div class="form-group">
+		    <input type="email" class="form-control" name="email" id="email" placeholder="Email *" value="" required>
 		     <?php if (isset($err_email)) { echo $err_email; } ?>
 		     <?php if (isset($err_username)) { echo $err_username; } ?>
 		  </div>
 		  <div class="form-group">
-		    <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone *" maxlength="30" required>
+		    <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone *" maxlength="30" value="" required>
 		  </div>
 		  <div class="form-group">
-			<input type="checkbox" name="terms" value="agree_terms" required> I accept the <a href="#" data-toggle="modal" data-target=".terms">Terms and Conditions</a>
+			<input type="checkbox" name="terms1" value="checked" required> I accept the <a href="#" data-toggle="modal" data-target=".terms" required>Terms and Conditions</a>
 		  </div>
 		  <div class="form-group">
-			<input type="checkbox" name="terms" value="agree_policy" required> I accept the <a href="includes/NeXXStarsPP.pdf" target="_blank">Policies and Procedures</a>
+			<input type="checkbox" name="terms2" value="checked" required> I accept the <a href="includes/NeXXStarsPP.pdf" target="_blank" required>Policies and Procedures</a>
 		  </div>
+		  <?php if (isset($err_terms)) { echo $err_terms; } ?> 
 		  <button type="submit" class="btn btn-primary">Continue</button>
 		</form>
 	 	<script>

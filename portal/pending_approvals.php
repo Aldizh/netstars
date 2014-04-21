@@ -8,7 +8,7 @@
 		header("Location: ../index.php"); 
 	}
 	$config = new Config();
-	$connection = $config->connect("209.200.231.164", "ciaot1", "mSaKSeZXt0TK");
+	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
 	if(!$dbconn){die("Could not select DB");}
 
@@ -38,7 +38,7 @@
 			$commission = 20;
 		}
 		else if ($row["membership_type"] == "business"){
-			$creditAmount = 0.02*1500;
+			$creditAmount = 0.02*1400;
 			$commission = 100;
 		}
 		$sql_read = "SELECT * FROM `customers` WHERE ID like '$row[enroller_ID]'";

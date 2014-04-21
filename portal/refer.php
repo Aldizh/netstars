@@ -4,7 +4,7 @@
 	include("../config.php");
 
 	$config = new Config();
-	$connection = $config->connect("209.200.231.164", "ciaot1", "mSaKSeZXt0TK");
+	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);
 
 	if(!$dbconn){die("Could not select DB");}
@@ -23,7 +23,7 @@
 	<section class="col-lg-9 col-md-9 col-sm-9">
 		<div class="panel panel-default">
 		  <div class="panel-body">
-		    Your Referral Link: http://tashiciao.ciaocrm.com/aldi/netstar/signup.php?code=<?echo $referralcode?>
+		    Your Referral Link: <a href="http://tashiciao.ciaocrm.com/aldi/netstar/signup.php?code=<?echo $referralcode?>">http://tashiciao.ciaocrm.com/aldi/netstar/signup.php?code=<?echo $referralcode?></a>
 		  </div>
 		</div>
 		<div class="panel panel-default">

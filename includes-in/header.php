@@ -41,11 +41,11 @@
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								      EN <span class="caret"></span>
 								    </a>
-								    <ul class="dropdown-menu">
+								    <!--ul class="dropdown-menu">
+								      <li><a href="../index.php">EN</a></li>
 								      <li><a href="../es/index.php">ES</a></li>
-								      <li><a href="../pt/index.php">PT</a></li>
-								    </ul>
-								  </li>
+								    </ul-->
+								</li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
@@ -78,10 +78,10 @@
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								      EN <span class="caret"></span>
 								    </a>
-								    <ul class="dropdown-menu">
-								      <li><a href="es/index.php">ES</a></li>
-								      <li><a href="pt/index.php">PT</a></li>
-								    </ul>
+								    <!--ul class="dropdown-menu">
+								      <li><a href="../index.php">EN</a></li>
+								      <li><a href="../es/index.php">ES</a></li>
+								    </ul-->
 								  </li>
 								<!-- 
 									<li><button class="btn btn-default btn-lg" data-toggle="modal" data-target=".purchase-form">Get Started</button></li>
