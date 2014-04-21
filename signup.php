@@ -6,6 +6,7 @@
 ?>
 
 <?
+/*
 	$config = new Config();
 	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
@@ -88,7 +89,7 @@
 			}
 
 		}
-	}
+	}*/
 ?>
 <div class="row signup-container">
 	<section class="form-box">
