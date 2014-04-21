@@ -1,11 +1,10 @@
 <?php
-	ob_start();
-	session_start();
+
 	include("includes/header.php");
-	include("config.php");
 ?>
 
-<?
+<? 
+/*
 	$config = new Config();
 	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
@@ -89,15 +88,13 @@
 
 		}
 	}
+*/
 ?>
 <div class="row signup-container">
 	<section class="form-box">
 		<h4> SIGN UP FORM </h4>
-		<form role="form" method="post" name="signup" id="signup" action="<? $_SERVER['PHP_SELF'] ?>">
-  		  <div class="form-group">
-  		    <input type="text" name="referral" class="form-control" id="ref-code" placeholder="Referal Code* (Please Ask your referrer if you don't have one)" value="<?=$_GET['code']?>"  disabled required>
-  		    <?php if (isset($err_ref_unique)) { echo $err_ref_unique; } ?>
-  		  </div>
+		<form role="form" method="post" name="signup" id="signup" action="signup-verify.php">
+  		  
   		  <div class="form-group">
 		      <section class="row">
 				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
