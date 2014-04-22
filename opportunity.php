@@ -36,14 +36,14 @@
 	</section>
 	<section class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 		<h1>Real rewards for your work</h1>
-		<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
+		<p>We reward our business partners and their direct & indirect teams with profits for your hard work. Reap not only the benefits of state of the art technology for Digital Voice, IP TV, Mobile Phones or Advertising solutions but also a change in your lifestyle. Leverage your network and get cash for your sales!</p>
 	</section>
 </div>
 
 <div class="row opportunity-row-2">
 	<section class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 		<h1>Getting started is easy</h1>
-		<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
+		<p>Find one of our Business or Personal Partners to sponsor and refer you into the program to start selling our products and solutions. Build your team, earn your way to the top and become the next star.</p>
 	</section>
 	<section class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
 		<a href="waitlist.php" class="btn btn-success btn-lg" style="margin-top: 3.0em;">Get Started</a>
