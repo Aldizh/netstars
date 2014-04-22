@@ -85,7 +85,8 @@
 
 		if(!$err_email and !$err_passlength and !$err_patternmatch and !$err_confirmation and !$err_terms and !$err_username and !$err_unique and !$err_ref_unique){
 			//check and set the sponsor
-			$sql_insert = "INSERT INTO `ciaot1_netex`.`pending_customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `membership_type`, `phone`, `fulladdress`) VALUES (NULL, '$username', '$password', '$referralcode', '$firstname[0]', '$lastname[0]', '$email', '$membership', '$phone', '$address');";
+			$date = date("Y-m-d H:i:s");
+			$sql_insert = "INSERT INTO `ciaot1_netex`.`pending_customers` (`ID`, `username`, `password`, `referralcode`, `firstname`, `lastname`, `email`, `membership_type`, `phone`, `fulladdress`, `dateadded`) VALUES (NULL, '$username', '$password', '$referralcode', '$firstname[0]', '$lastname[0]', '$email', '$membership', '$phone', '$address', '$date');";
 			$result = mysql_query($sql_insert);
 			if (substr(mysql_error(), 0, 9) === "Duplicate"){
 				$err_username = '<div class="error">Sorry, this username is already taken.</div>';
@@ -94,7 +95,10 @@
 			else{
 				$id = mysql_insert_id();
 				$_SESSION["id_pending"] = $id;
-				header("Location: payment.php"); 
+				if ($membership == 'partner'){header("Location: payment-partner.php");}
+				else if ($membership == 'personal'){header("Location: payment-personal.php");}
+				else if ($membership == 'business'){header("Location: payment-business.php");}
+				// header("Location: payment.php"); 
 			}
 
 		}
@@ -130,7 +134,7 @@
 					  <div class="radio">
 					    <label>
 					      <input type="radio" name="optionsRadios" id="business" value="business">
-						  <a id="popover3" rel="popover" data-content="">Business ($1549.99)</a>
+						  <a id="popover3" rel="popover" data-content="">Business ($1449.99)</a>
 					    </label>
 					  </div>
 				  </div>
@@ -163,7 +167,6 @@
 		  <div class="form-group">
 		    <input type="email" class="form-control" name="email" id="email" placeholder="Email *" value="<?=$_SESSION["email"]?>" required>
 		     <?php if (isset($err_email)) { echo $err_email; } ?>
-		     <?php if (isset($err_username)) { echo $err_username; } ?>
 		  </div>
 		  <div class="form-group">
 		    <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone *" maxlength="30" value="<?=$_SESSION["phone"]?>" required>

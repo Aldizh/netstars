@@ -13,7 +13,10 @@
 	if(!$dbconn){die("Could not select DB");}
 
 	//Take care of the logout
-	if ($_GET["logout"] == true){$_SESSION["id"] = NULL; header("Location: index.php");}
+	if ($_GET["logout"] == true){
+		session_unset();
+		header("Location: index.php");
+	}
 
 	//Take care of login
 	if (isset($_POST["username"]) and isset($_POST["password"])){

@@ -9,6 +9,7 @@
   <li><a href="form_upload.php"><span class="glyphicon glyphicon-file"> Upload-Document</a></li>
   <li><a href="../index.php?logout=true"><span class="glyphicon glyphicon-off"> Logout</a></li>
   <?if ($_SESSION["admin"] == true){?>
-	<li><a href="pending_approvals.php"><span class="glyphicon glyphicon-calendar"> Pending-Approvals</a></li>
+  	<li><a href="pending_approvals.php"><span class="glyphicon glyphicon-calendar"> Pending-Approvals</a></li>
+    <li><a href="add_customers.php"><span class="glyphicon glyphicon-list-alt"> Pending-Customers</a></li>
   <?}?>
 </ul>
