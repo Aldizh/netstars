@@ -1,6 +1,6 @@
 <?php include("includes/header.php"); ?>
-<section class="row hidden-xs" style="height: 5.0em; background:#FFF;"></section>
-<section class="row product-rows" id="product-row-1"> <!-- CARD -->
+<!--section class="row hidden-xs" style="height: 5.0em; background:#FFF;"></section-->
+<!--section class="row product-rows" id="product-row-1">
 	<div class="product-section-wrapper"> 
 		<div class="col-lg-6 col-md-6 text-right hidden-xs">
 			<img src="images/product-card.png" alt="Home Mobile Plans Bg">
@@ -11,19 +11,7 @@
 			<a href="waitlist.php"><button class="btn btn-primary btn-lg">Join Now</button></a>
 		</div>
 	</div>
-</section>
-<section class="row product-rows" id="product-row-2"> <!-- WEB ADs -->
-	<div class="product-section-wrapper"> 
-		<div class="col-lg-6 col-md-6">
-			<h1>Web Advertising</h1>
-			<p>Get paid per clicks and interactions with our publisher network or get views to your own web-site.</p>
-			<a href="waitlist.php"><button class="btn btn-default btn-lg">Join Now</button></a>
-		</div>
-		<div class="col-lg-6 col-md-6 text-right hidden-xs" id="phone-image">
-			<img src="images/product-webads.png" alt="Home Mobile Plans Bg">
-		</div>
-	</div>
-</section>
+</section-->
 <section class="row product-rows" id="product-row-3"> <!-- CARD -->
 	<div class="product-section-wrapper">
 		<div class="col-lg-6 col-md-6 text-right hidden-xs">
@@ -69,6 +57,18 @@
 		</div>
 		<div class="col-lg-6 col-md-6 text-right hidden-xs" id="phone-image">
 			<img src="images/product-security.png" alt="Home Mobile Plans Bg">
+		</div>
+	</div>
+</section>
+<section class="row product-rows" id="product-row-2"> <!-- WEB ADs -->
+	<div class="product-section-wrapper"> 
+		<div class="col-lg-6 col-md-6">
+			<h1>Web Advertising</h1>
+			<p>Get paid per clicks and interactions with our publisher network or get views to your own web-site.</p>
+			<a href="waitlist.php"><button class="btn btn-default btn-lg">Join Now</button></a>
+		</div>
+		<div class="col-lg-6 col-md-6 text-right hidden-xs" id="phone-image">
+			<img src="images/product-webads.png" alt="Home Mobile Plans Bg">
 		</div>
 	</div>
 </section>

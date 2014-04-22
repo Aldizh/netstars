@@ -4,7 +4,7 @@
 	include("../includes-in/header.php");
 	include("../config.php");
 	$config = new Config();
-	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
+	$connection = $config->connect("localhost", "NetStar", "G62267Fd8OX277z");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
 	if(!$dbconn){die("Could not select DB");}
 	if ($_GET["clicked"] == "true"){
@@ -16,7 +16,7 @@
 		$sql_update = "UPDATE `ciaot1_netex`.`customers` SET `numberofclicks` = '$clicks' WHERE `customers`.`ID` = '$row[0]';";
 		$result_update = mysql_query($sql_update);
 		if ($result_update == false){die(var_dump(mysql_error()));}
-		header("Location: ../index.php");
+		header("Location: home.php");
 	}
  ?>
 

@@ -12,7 +12,7 @@
 		$year = (int)$arr[1];
 	}
 	$config = new Config();
-	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
+	$connection = $config->connect("localhost", "NetStar", "G62267Fd8OX277z");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
 	if(!$dbconn){die("Could not select DB");}
 

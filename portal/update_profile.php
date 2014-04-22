@@ -7,7 +7,7 @@
 <?
 	$config = new Config();
 	//$connection = $config->connect("209.200.231.164", "ciaot1", "mSaKSeZXt0TK");
-	$connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
+	$connection = $config->connect("localhost", "NetStar", "G62267Fd8OX277z");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
 	if(!$dbconn){die("Could not select DB");}
 

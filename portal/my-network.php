@@ -6,7 +6,7 @@
 
 <?
 	$config = new Config();
-    $connection = $config->connect("localhost", "NetStar", "kRJd7tW3PLc3m4");
+    $connection = $config->connect("localhost", "NetStar", "G62267Fd8OX277z");
 	$dbconn = mysql_select_db("ciaot1_netex", $connection);	
 	if(!$dbconn){die("Could not select DB");}
 
@@ -53,6 +53,9 @@
 			</div>
 
 			<!-- ############## 1st LVL separation ########################   -->
+			<div style="clear:both;">
+				<div style="width:1px; border-left:1px solid #9E6A36; border-right:1px solid #9E6A36; margin-top:1px; height:10px; padding-bottom:10x;"></div>
+			</div>
 			<div style="clear:both;">
 				<div style="width:1px; border-left:1px solid #9E6A36; border-right:1px solid #9E6A36; margin-top:1px; height:10px; padding-bottom:10x;"></div>
 			</div>
