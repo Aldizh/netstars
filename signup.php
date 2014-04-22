@@ -45,6 +45,16 @@
 			$err_terms = "Please agree to the terms frst!";
 		}
 
+		//store user in session info
+		$_SESSION["referralcode"] = $referralcode;
+		$_SESSION["username"] = $_POST["username"];
+  		$_SESSION["password"] = $_POST["password"];
+  		$_SESSION["firstname"] = $_POST["firstname"];
+  		$_SESSION["lastname"] = $_POST["lastname"];
+  		$_SESSION["email"] = $_POST["email"];
+  		$_SESSION["phone"] = $_POST["phone"];
+  		$_SESSION["address"] = $_POST["fulladdress"];
+
 		//Check for uniqueness on username and email
 		$sql_read_user = "SELECT * FROM `customers` WHERE username like '$username'";
 		$result_user = mysql_query($sql_read_user);
@@ -127,7 +137,7 @@
 			  </section>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="username" placeholder="User Name *" maxlength="30" value="" required>
+		    <input type="text" class="form-control" name="username" placeholder="User Name *" maxlength="30" value="<?=$_SESSION["username"]?>" required>
 		    <?php if (isset($err_username)) { echo $err_username; } ?>
 		    <?php if (isset($err_unique)) { echo $err_unique; } ?>
 		  </div>
@@ -141,22 +151,22 @@
 		      <?php if (isset($err_confirmation)) { echo $err_confirmation; } ?>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="firstname" id="first-name" placeholder="First Name *" maxlength="30" value="" required>
+		    <input type="text" class="form-control" name="firstname" id="first-name" placeholder="First Name *" maxlength="30" value="<?=$_SESSION["firstname"]?>" required>
 		    <?php if (isset($err_patternmatch)) { echo $err_patternmatch; } ?>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="lastname" id="last-name" placeholder="Last Name *" maxlength="30" value="" required>
+		    <input type="text" class="form-control" name="lastname" id="last-name" placeholder="Last Name *" maxlength="30" value="<?=$_SESSION["lastname"]?>" required>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="fulladdress" placeholder="Address *" maxlength="70" value="" required>
+		    <input type="text" class="form-control" name="fulladdress" placeholder="Address *" maxlength="70" value="<?=$_SESSION["address"]?>" required>
 		  </div>
 		  <div class="form-group">
-		    <input type="email" class="form-control" name="email" id="email" placeholder="Email *" value="" required>
+		    <input type="email" class="form-control" name="email" id="email" placeholder="Email *" value="<?=$_SESSION["email"]?>" required>
 		     <?php if (isset($err_email)) { echo $err_email; } ?>
 		     <?php if (isset($err_username)) { echo $err_username; } ?>
 		  </div>
 		  <div class="form-group">
-		    <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone *" maxlength="30" value="" required>
+		    <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone *" maxlength="30" value="<?=$_SESSION["phone"]?>" required>
 		  </div>
 		  <div class="form-group">
 			<input type="checkbox" name="terms1" value="checked" required> I accept the <a href="#" data-toggle="modal" data-target=".terms" required>Terms and Conditions</a>

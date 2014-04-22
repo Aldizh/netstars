@@ -23,14 +23,14 @@
 	<section class="col-lg-9 col-md-9 col-sm-9">
 		<div class="panel panel-default">
 		  <div class="panel-body">
-		    Your Referral Link: <a href="http://tashiciao.ciaocrm.com/aldi/netstar/signup.php?code=<?echo $referralcode?>">http://tashiciao.ciaocrm.com/aldi/netstar/signup.php?code=<?echo $referralcode?></a>
+		    Your Referral Link: <a href="http://nexxstars.com/signup.php?code=<?echo $referralcode?>">http://nexxstars.com/signup.php?code=<?echo $referralcode?></a>
 		  </div>
 		</div>
-		<div class="panel panel-default">
+		<!--div class="panel panel-default">
 		  <div class="panel-body">
 		    Your Referral Code: <?echo $referralcode ?>
 		  </div>
-		</div>
+		</div-->
 	</section>
 </div>
 			

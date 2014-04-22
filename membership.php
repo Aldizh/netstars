@@ -10,19 +10,19 @@
 		<section class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center">
 			      <h3 class="text-center"><img src="images/membership-partner-icon.png" alt="Membership Partner Icon"> Partner</h3>
 			      <img src="images/membership-partner.jpg" class="img-thumbnail" alt="Package 1">
-				  <a href="signup.php" class="btn btn-warning btn-lg" role="button">Select</a>
+				  <a href="waitlist.php" class="btn btn-warning btn-lg" role="button">Select</a>
 				  <h4>US <strong>$49.99</strong> Membership Fee</h4>
 		</section>
 		<section class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center">
 		      <h3 class="text-center"><img src="images/membership-personal-icon.png" alt="Membership Personal Icon"> Personal</h3>
 		      <img src="images/membership-personal.jpg" class="img-thumbnail" alt="Package 1">
-			  <a href="signup.php" class="btn btn-warning btn-lg" role="button">Select</a>
+			  <a href="waitlist.php" class="btn btn-warning btn-lg" role="button">Select</a>
 			  <h4>US <strong>$349.99</strong> Membership Fee</h4>
 		</section>
 		<section class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center">
 		      <h3 class="text-center"><img src="images/membership-business-icon.png" alt="Membership Business Icon"> Business</h3>
 		      <img src="images/membership-business.jpg" class="img-thumbnail" alt="Package 1">
-				<a href="signup.php" class="btn btn-warning btn-lg" role="button">Select</a>
+				<a href="waitlist.php" class="btn btn-warning btn-lg" role="button">Select</a>
   			  <h4>US <strong>$1449.99 Membership Fee</strong></h4>
 		</section>
 		

@@ -63,6 +63,16 @@ if ($_FILES["file"]){
 		<? include("../includes-in/portal-nav.php"); ?>
 	</section>
 	<section class="col-lg-9 col-md-9 home-boxes">
+		<h4><strong>Identity Verification</strong></h4>
+		<em><p style="font-weight:300; font-size:90%; text-align:left;">please upload one of the following documents to verify your identity so that we can approve your application. The document must be unexpired.</p></em>
+		<ul class="list-group" style="width: 500px;">
+		  <li class="list-group-item">State issued Driver License or Identification Card</li>
+		  <li class="list-group-item">Passport</li>
+		  <li class="list-group-item">Green Card</li>
+		  <li class="list-group-item">Work Permit</li>
+		  <li class="list-group-item">Birth Certificate</li>
+		  <li class="list-group-item">Government issued ID (International)</li>
+		</ul>
 		<form action="<? $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
 			<input type="file" name="file"><br>
 			<input type="submit" value="Upload">

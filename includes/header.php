@@ -11,6 +11,15 @@
 	<script src="js/respond.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-50112144-1', 'nexxstars.com');
+	  ga('send', 'pageview');
+	</script>
 </head>
 
 <body>
@@ -104,7 +113,7 @@
 		<section class="row visible-xs login-signup-mobile">
 			<? if ($_SESSION["id"] == NULL) {?>
 				<div class="col-xs-6 text-right">
-					<a href="signup.php" class="btn btn-primary btn-sm">JOIN NOW</a>
+					<a href="waitlist.php" class="btn btn-primary btn-sm">JOIN NOW</a>
 				</div>
 				<div class="col-xs-6">
 					<a class="btn btn-primary btn-sm" data-toggle="modal" data-target=".login-modal">LOGIN</a>

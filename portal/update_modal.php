@@ -15,7 +15,8 @@
 			<div class="col-lg-6 col-md-6 home-boxes">
 				<form role="form" method="post" action="../portal/update_profile.php">
 				<div class="form-group">
-				  <input type="password" class="form-control" name="oldpass" placeholder="Enter current password*">
+				  <label> Please, enter current password </label>
+				  <input type="password" class="form-control" name="oldpass" placeholder="Enter current password*" value="">
 				</div>
 				<div class='text-center'>
 					<button type="submit" class="btn btn-success btn-md">Update</button>

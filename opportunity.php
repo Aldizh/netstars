@@ -46,7 +46,7 @@
 		<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
 	</section>
 	<section class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
-		<button class="btn btn-success btn-lg" style="margin-top: 3.0em;">Get Started</button>
+		<a href="waitlist.php" class="btn btn-success btn-lg" style="margin-top: 3.0em;">Get Started</a>
 	</section>
 </div>
 

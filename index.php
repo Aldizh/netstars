@@ -46,7 +46,7 @@
 				tech products for the<br>
 				young entrepreneur
 			</p>
-			<a href="signup.php" class="btn btn-primary btn-lg" >Get Started</a>
+			<a href="waitlist.php" class="btn btn-primary btn-lg" >Get Started</a>
 		</section>
 	</div>
 	<div class="col-xs-12 visible-xs">
@@ -57,7 +57,7 @@
 				tech products for the<br>
 				young entrepreneur
 			</p>
-			<a href="signup.php" class="btn btn-primary btn-lg" >Get Started</a>
+			<a href="waitlist.php" class="btn btn-primary btn-lg" >Get Started</a>
 		</section>
 	</div>
 </section>

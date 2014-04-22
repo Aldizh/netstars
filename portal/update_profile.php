@@ -61,55 +61,50 @@
 	$phone = $row[31];
 ?>
 <!-- PORTAL CONTENT starts -->
-<div class="container" id="portal-wrapper">
-	<div class="row portal-container">
+<div class="row portal-container">
 	<section class="col-lg-3 col-md-3 member-nav">
 		<? include("../includes-in/portal-nav.php"); ?>
 	</section>
-	<section class="col-lg-9 col-md-9 home-boxes">
-		<div class="row">
-			<div class="col-lg-6 col-md-6 home-boxes">
-				<form class="form-horizontal" action="<?$_SERVER['PHP_SELF']?>" method="post" role="form">
-			  <div class="form-group">
-			  	 <label for="position" class="col-sm-4 control-label"></label>
-			  	 <div class="col-sm-5">
-			  	 	<label for="position">Leg Preference</label>
-			     </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="position" class="col-sm-5 control-label">Left</label>
-			    <div class="col-sm-4">
-					<input type="radio" name="optionsRadios" id="partner" value="left" <?if ($position == "left"){?>checked<?}?>>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="position" class="col-sm-5 control-label">Right</label>
-			    <div class="col-sm-4">
-					<input type="radio" name="optionsRadios" id="partner" value="right" <?if ($position == "right"){?>checked<?}?>>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="Password" class="col-sm-4 control-label">New Password</label>
-			    <div class="col-sm-5">
-			      <input type="password" name="password" class="form-control" id="inputPassword3" value="" >
-			      <?php if (isset($pass_error)) { echo $pass_error; } ?>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="Last" class="col-sm-4 control-label">New Email</label>
-			    <div class="col-sm-5">
-			      <input type="text" name="email" class="form-control" id="inputEmail3" value=<?= $email;?> >
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="Last" class="col-sm-5 control-label"></label>
-			    <div class="col-sm-4">
-			      <button type="submit" class="btn btn-primary">Update</button>
-			    </div>
-			  </div>
-			</form>
+	<section class="col-lg-9 col-md-9">
+		<form role="form" action="<?$_SERVER['PHP_SELF']?>" method="post">
+			<div style="border: #CCC solid 1px; width: 400px; padding: 1.2em; border-radius: 3px;">
+				<h4>LEG PREFERENCE</h4>
+				<div class="radio">
+				  <label>
+				  	<? if ($position == "left"){ ?>
+				    	<input type="radio" name="optionsRadios" id="partner" value="left" checked>
+				    <?}else{?>
+				    	<input type="radio" name="optionsRadios" id="partner" value="left">
+				    <?}?>
+				    LEFT
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+				  	<? if ($position == "right"){ ?>
+				    	<input type="radio" name="optionsRadios" id="partner" value="right" checked>
+				    <?}else{?>
+				     	<input type="radio" name="optionsRadios" id="partner" value="right" >
+				    <?}?>
+				    RIGHT
+				  </label>
+				</div>
 			</div>
-		</div>
+			<br>
+			<div style="border: #CCC solid 1px; width: 400px; padding: 1.2em; border-radius: 3px;">
+	  		  <div class="form-group">
+	  		    <label for="password">New Password (If you want to change)</label>
+	  		    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value="" size="40">
+				<?php if (isset($pass_error)) { echo $pass_error; } ?>
+	  		  </div>
+	  		  <div class="form-group">
+	  		    <label for="email">New Email</label>
+	  		    <input type="text" name="email" class="form-control" id="exampleInputPassword1" placeholder="Password" size="40" value=<?= $email;?>>
+	  		  </div>
+			<button type="submit" class="btn btn-primary" style="font-size: 1.0em;">Update</button>
+	 </div>
+		</form>
 	</section>
 </div>
+<br><br>
 <?include("../includes-in/footer.php");?>

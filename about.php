@@ -25,7 +25,7 @@
 
 <p>We have the best professionals in the areas of business,  legal, technology and support to offer you a fantastic experience and help you earn a career as one of our trusted Partners.</p>
 
-			<h2>About Mr. Cooper</h2>
+			<h2>About Mr. Cook</h2>
 			<p>Mr. Cook’s first exposure to network marketing was at aged 11 when his Mother and Father joined “Pre-Paid legal”. He quickly grasped the nuances of this business marketing model and by his 16th birthday he signed his first contract with Amway and thus launched a career built upon passion, integrity and drive toward a life of freedom and opportunity! </p>
 			<ul>
 				<li>International Studies Major at The University of Arkansas Little Rock.</li>

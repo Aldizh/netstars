@@ -349,8 +349,7 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 
 /** PORTAL CSS **/
 .portal-container {
-	margin-top: 1.2em;
-	padding-right:1.4em;
+	margin: 1.2em auto 0;
 }
 .home-boxes {
 	padding:  0 1.4em 1.4em 1.4em;
@@ -360,9 +359,7 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 .home-boxes h2 {
 	font-size: 1.6em;
 	margin:0;
-	padding: 0.6em;
-	background: #1868ae;
-	color: #CCC;
+	color: #000;
 }
 .home-boxes h3 {
 	width: 60%;
@@ -370,7 +367,7 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 	text-align:center;
 	font-family: 'Gilda Display', serif;
 	font-size: 3.0em;
-	color: #FFF;
+	color: #000;
 	font-weight: bold;
 }
 .home-boxes p {
@@ -381,11 +378,12 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 	color: #545759;
 }
 .box {
-	border: 1px solid #1868ae;
-	padding:0;
+	border: 1px solid #FFF;
+	padding:1.2em;
 	margin-bottom: 2.4em;
 	border-radius:5px;
-	background: #51A2E8;
+	background: #FFF;
+	box-shadow: 1px 1px 10px #B1B1B1;
 }
 .my-network-wrapper {
 	border: 1px solid #CCC;
@@ -407,4 +405,26 @@ a:hover {opacity:0.5;transition:all 0.2s ease-in-out;}
 .checkbox {
 	width: 30px;
 	margin: auto;
+}
+
+.portal-navs li a {
+	color: #FFF;
+	border-bottom: 1px solid #757575;
+	padding:1.3em 1.1em;
+	}
+.portal-navs li a:hover {
+ 	background-color: #000;
+ 	color: #FFF;
+}
+
+.member-nav {
+ 	height: 710px;
+    background: #525252;
+    margin: -17px 0 0 -17px;
+    box-shadow: inset 1px 1px 40px #333333;
+ 	padding-left:0;
+	padding-right:0;
+ }
+.radio {
+	margin: 1.2em;
 }
